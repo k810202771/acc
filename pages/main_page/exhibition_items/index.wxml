@@ -1,0 +1,18 @@
+<view>
+  <scroll-view style="height:100vh" class="hot-box" scroll-y="true" upper-threshold="50" lower-threshold="100" bindscrolltolower="scrolltolower">
+    <view class="hot-box-main WxMasonryView">
+      <block wx:for="{{results}}" wx:for-item="item" wx:for-index="i" wx:key="objectId">
+        <view class="WxMasonry">
+          <navigator id="{{item.objectId}}" url="../exhibition_item_detail/index?id={{item.objectId}}">
+            <image class="WxMasonryImage" id="{{item.objectId}}" mode="aspectFill" src="{{item.coverUrl.url+'?imageView/2/w/500'}}" />
+            <view class="list-box-title">{{item.nameBase}}</view>
+          </navigator>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</view>
+
+<!--
+     
+             style="width:{{imagesHeightList[item.objectId].width}}px;height:{{imagesHeightList[item.objectId].height}}px" bindload="WxMasonryImageLoad" -->

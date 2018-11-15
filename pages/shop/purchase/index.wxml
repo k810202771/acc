@@ -1,0 +1,18 @@
+<!--pages/shop/purchase/index.wxml-->
+<view class='headerbg'><text class='fontcolor'>{{ddzt?"支付时间剩余：":"订单已过期"}}</text>{{time}}</view>
+<view class="cbox">
+    <view class='orderbox'><view class='orderleft'>订单号：</view><view class='orderright'>{{res.data.data.shopid}}</view></view>
+    <view class='orderbox'><view class='orderleft'>商品名称：</view><view class='orderright'>{{title}}</view></view>
+    <view class='orderbox'><view class='orderleft'>支付金额：</view><view class='orderright je'>￥{{visibility?showprice + (expressXz==1?10:""):saleprice * activityNumber + (expressXz==1?10:0)}}{{visibility?" + "+showpoints+"积分": ""}}</view>
+</view></view>
+
+<radio-group class="radio-group" bindchange="radioChange">
+  <label wx:for="{{radiolist}}">
+    <view class='cbox'>
+      <text class='{{item.icon}} iconfont' style='color:#{{item.color}};margin-right:2vw;font-size:6vw;'></text>
+      <text class='zhifutext yjz'>{{item.value}}</text>
+      <radio value="{{item.name}}" checked="{{item.checked}}" class='radio yjz'></radio>
+    </view>
+  </label>
+</radio-group>
+  <view wx:if="{{ddzt}}" class='qrbutton' bindtap='payment'>确认支付</view>

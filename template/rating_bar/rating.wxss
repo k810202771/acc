@@ -1,0 +1,6 @@
+.rating-item{
+    width: 750rpx;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

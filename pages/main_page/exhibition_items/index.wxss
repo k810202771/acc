@@ -1,0 +1,65 @@
+/* pages/exhibition_items/index.wxss */
+
+.WxMasonryView {
+  /*column-count:2;
+  column-gap: 2px;*/
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.WxMasonry {
+  /*width: 95%;*/
+  width: 46.26%;
+  /*background: #fefefe;*/
+  /*border: 2px solid #fcfcfc;*/
+  /*box-shadow: 0px 2px 2px rgba(34, 25, 25, 0.4);*/
+  margin: 5px 0px 5px 8.5px;
+  /*margin-top: 5rpx;*/
+  /*margin-left: 5rpx;*/
+  /*padding: 1px;*/
+  padding-bottom: 5px;
+  /*transition: opacity .4s ease-in-out;*/
+  display: inline-block;
+  border-radius: 10rpx;
+  border-width: 0rpx;
+  border-color: #ebebeb;
+  border-style: solid;
+}
+
+.WxMasonryImage {
+  height: 350rpx;
+  width: 100% !important;
+  display: inline-block;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  border-bottom-left-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+  /*border-width: 10rpx;*/
+}
+
+.hot-box {
+  background-color: #ebebeb;
+}
+ 
+.list-box {
+  padding: 0;
+  display: inline-block;
+  font-size: 30rpx;
+  border-bottom: 1px solid #f6f6f6;
+}
+
+.list-box-title {
+  display: block;
+  color: #000;
+  /*height: 100rpx;*/
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 30rpx;
+  font-weight: 300;
+  line-height: 42rpx;
+}

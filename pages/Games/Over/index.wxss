@@ -1,0 +1,435 @@
+@import '/pages/multiplexing/cardwindow.wxss';
+
+page{
+  position: relative;
+  height:100%;
+  width: 100%;
+  margin: 0;
+  background: #efefef;
+}
+.windowOpen{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 9999;
+  overflow: hidden;
+  /*animation: windowOpen 0.3s;*/
+  transition: background 0.5s;
+}
+@keyframes k-loadingO{
+  0% {
+      transform: rotateZ(0deg);
+  }
+  100% {
+      transform: rotateZ(360deg);
+  }
+}
+@keyframes k-loading1{
+  0% {
+      transform: scale3d(0,0,1);
+  }
+  100% {
+      transform: scale3d(1,1,1);
+  }
+}
+@keyframes k-loading2{
+  0% {
+      transform: scale3d(0,0,1) translate3d(20vw,0,0);
+  }
+  100% {
+      transform: scale3d(1,1,1) translate3d(20vw,0,0);
+  }
+}
+.windowbgg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 80vw;
+  height: 80vw;
+  opacity: 0.5;
+  animation: k-loadingO 10s linear infinite;
+}
+.btitle{
+  position: absolute;
+  top: 25vw;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 80vw;
+  height: 9.46vw;
+}
+.tcckbutton{
+  position: absolute;
+  left: 0;
+  bottom: 25vw;
+  right: 0;
+  margin: auto;
+  background: #ffcc35;
+  color:#fff;
+  border-radius: 5px;
+  width: 70vw;
+  height: 12vw;
+  line-height: 12vw;
+  font-size: 4vw;
+  text-align: center;
+}
+.tgbutton{
+  position: absolute;
+  left: 0;
+  bottom: 12vw;
+  right: 0;
+  margin: auto;
+  color:#fff;
+  font-size: 4vw;
+  text-align: center;
+  text-decoration: underline;
+}
+.windowkapian1{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 2;
+  perspective: 200px;
+  height: 28.56vw;
+  width: 35vw;
+  transition: transform 1s;
+  animation: k-loading1 .5s linear;
+}
+.windowkapian2{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 1;
+  perspective: 200px;
+  height: 28.56vw;
+  width: 35vw;
+  transition: transform 1s ;
+  animation: k-loading2 .5s linear;
+}
+.reward{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom:0;
+
+  /*border: 5px solid transparent; */
+}
+.scoreBox{
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 80px;
+  line-height: 80px;
+  font-size: 18px;
+  top: 140px;
+}
+.scoreBox view{
+  height: 100%;
+  min-width: 20%;
+  max-width: 80%;
+  color: #fff;
+  text-align: center;
+}
+.scoreBox .SL{
+  float: left;
+  width: 0%;
+  background: #65d4ef;
+  border-radius: 0 90px 90px 0;
+  transition: width 1s;
+}
+.scoreBox .SR{
+  float: right;
+  width: 0%;
+  background: #fe7273;
+  border-radius:90px 0 0 90px;
+  transition: width 1s;
+}
+.UserIcon{
+  position: absolute;
+  width: 20%;
+  height: auto;
+  top: 30px;
+  text-align: center;
+  color: #4b4b4b;
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+.TFIcon{
+  position: absolute;
+  width: 50%;
+  height: auto;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  overflow: visible;
+  z-index: 99;
+}
+.TFIcon image{
+  width: 100%;
+  height: 100%;
+}
+.Uservpn{
+  position: absolute;
+  width: 50%;
+  height: 100px;
+  top: 220px;
+  color: #4b4b4b;
+  font-size: 14px;
+  z-index: 1
+}
+
+.UserVpnLeft{
+  left: 0;
+  text-align: left;
+}
+.UserVpnRight{
+  right: 0;
+  text-align: right;
+}
+.Uservpn text{
+  display: inline-block;
+  margin-top: 5px;
+  text-align: center;
+}
+.pnLeft_o1{ 
+  animation:pnLeft_o1 1s;
+  animation-fill-mode: forwards;
+}
+.pnLeft_o2{
+  animation:pnLeft_o2 1s;
+  animation-fill-mode: forwards;
+}
+/*按钮动画*/
+@keyframes pnLeft_o1
+{
+0%   {transform: translate3d(-100%,0,0);}
+100%   {transform: translate3d(0,0,0);}
+}
+/*按钮动画*/
+@keyframes pnLeft_o2
+{
+0%   {transform: translate3d(100%,0,0);}
+100%   {transform: translate3d(0,0,0);}
+}
+/*奖杯 🏆 动画*/
+.TFIcon image{
+  animation:TFIconA 1s;
+}
+/*按钮动画*/
+@keyframes TFIconA
+{
+0%   {transform: scale3d(5,5,1) translate3d(0,10%,0);}
+50%   {transform: scale3d(1,1,1) translate3d(0,0,0);}
+75%   {transform: scale3d(1.2,1.2,1);}
+100%   {transform: scale3d(1,1,1);}
+}
+
+.integral{
+  position: absolute;
+  width: 80%;
+  height: 45px;
+  top: 75px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.iContent{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%,-50%,0);
+  height: 30px;
+  line-height: 30px;
+}
+.iContent image{
+  float: left;
+  width: 30px;
+  height: 30px;
+}
+.iContent text{
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  margin-left: 10px;
+}
+.lineBox{
+  width: 100%;
+  height: 1px;
+  background:linear-gradient(to right, transparent 1%, #acacac 50%,transparent 99%) ;
+}
+.lineTop{
+  position: absolute;
+  top: 0;
+}
+.lineBottom{
+  position: absolute;
+  bottom: 0;
+}
+.Buttons{
+  position: absolute;
+  width: calc(100% - 40px);
+  height: 10%;
+  left: 50%;
+
+  bottom: 14%;
+
+  transform: translateX(-50%);
+  text-align: center;
+  overflow: visible;
+}
+.Buttontext{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 12%;
+  transform: translateY(100%);
+  text-align: center;
+  font-size: 3vw;
+  color: #989898;
+}
+.Buttons button{
+  float: left;
+  display: auto;
+  position: relative;
+  margin: 0 5px;
+  width: calc(50% - 10px);
+  height: 100%;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  /*box-shadow:0 1px 1px rgba(0, 0, 0, 0.5);*/
+}
+.Buttons button text{
+  font-size:14px; 
+  line-height: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%,-50%,0);
+}
+.ButtonW{
+  outline:none;
+  border:none;
+  list-style: none;
+  background: #fff;
+}
+button::after{
+border:none;
+}
+
+.ButtonY{
+  outline:none;
+  border:none;
+  list-style: none;
+  color: #fff;
+  background: #ffcc35;
+}
+
+.UserVpnLeft text{
+  border-radius: 0 90px 90px 0;
+}
+.UserVpnRight text{
+  border-radius: 90px 0 0 90px;
+}
+.Uservpn_o1 text{
+  background: #fff;
+  padding: 4px 15px;
+  font-size: 0.8em;
+}
+.Uservpn_o2 text{
+  color: #fff;
+  padding: 4px 30px;
+  background: #ffcc35;
+  font-size: 1em;
+}
+.UserIcon text{
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+}
+.UserIcon image{
+  width: calc(100% - 15px);
+  margin: auto auto 5px auto;
+  border-radius: 5px;
+  display: block;
+}
+.Userleft{
+  left: 10px;
+}
+.Userright{
+  right: 10px;
+}
+.eImgBox{
+  position: relative;
+  float: left;
+  width: 20%;
+  height: 50%;
+}
+.eImg{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 60%;
+  height: 60%;
+  transform: translate3d(-50%,-50%,0);
+}
+.expression{
+  position: absolute;
+  width: 80%;
+  background: #fff;
+  /*top: 130px;*/
+  top: 40%;
+  left: 50%;
+  /*height: 102px;*/
+  bottom: calc(25% + 15px);
+  transform: translateX(-50%);
+}
+.expressionShow{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100px;
+  height: 100px;
+  z-index: 999;
+  overflow: visible;
+}
+.ESL{
+  position: absolute;
+  overflow: visible;
+  left: 0;
+  transition: transform 0.8s,opacity 0.5s;
+}
+.ESR{
+  position: absolute;
+  right: 0;
+  overflow: visible;
+  transition: transform 0.8s,opacity 0.5s;
+}
+.plobj{
+  position: absolute;
+  top: calc(50% - 4px);
+  left: 50%;
+}
+.ESL .plobj{
+  transform: translate3d(-50%,-50%,0);
+}
+.ESR .plobj{
+  transform: translate3d(-50%,-50%,0) rotateY(180deg);
+}
+image{
+  width: 0;
+  height: 0;
+}

@@ -1,0 +1,19 @@
+<import src="../multiplexing/alert.wxml" />
+<template is="alert" data="{{alertdata:alertdata}}" ></template>
+<view class='rule' bindtap='click' data-type='rule'>集卡规则</view>
+
+<image class="bg1" mode="widthFix" src="{{url}}images/bg1.png" ></image>
+<image class="bg2" mode="widthFix" src="{{url}}images/bg2.png" ></image>
+
+<view class="imgbox" wx:for="{{card}}" style='transform: translateX({{100 * (index - cardindex + 1)}}%)'>
+  <image class="imgMax" mode="widthFix" style='{{animation_name}}' src="https://www.zhanapp.com.cn/php/5x4_img.php?url={{url}}images/{{index + 1}}.png&cq=1&width={{window.screenWidth * window.pixelRatio * 0.45}}" ></image>
+</view>
+<view class="imgMinbox">
+  <image bindtap="click" data-type='image' data-id='{{index + 1}}' wx:for="{{card}}" class="imgMin hotbox {{item > 0?'':'filter'}}" mode="widthFix" src="https://www.zhanapp.com.cn/php/5x4_img.php?url={{url}}images/{{index + 1}}.png&cq=1&width={{window.screenWidth * window.pixelRatio * 0.14}}" ><view wx:if="{{item > 0}}" class='indexhot'>{{item}}</view><view wx:if="{{cardindex == index+1}}" class='indexgb'></view></image>
+</view>
+<view class="btbox">
+<!--open-type='{{card[cardindex - 1] > 1?"share":""}}' data-type='give' style='{{card[cardindex - 1] > 1?"":"background:#cbcbcb"}}-->
+  <button class='button' bindtap='{{"click"}}' data-type='{{card[cardindex - 1] > 1?"give":"nogive"}}' style='{{card[cardindex - 1] > 1?"":"background:#cbcbcb"}}'>送给好友</button>
+  <button class='button' data-type='obtain' bindtap='click'>求好友赠送</button>
+  <button class='button' data-type='exchange' bindtap='click'>兑换门票</button>
+</view>

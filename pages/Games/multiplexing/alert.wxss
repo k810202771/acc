@@ -1,0 +1,55 @@
+.alert_bg{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, .3);
+  z-index: 999;
+}
+.alert_box{
+  position: absolute;
+  width: 80vw;
+  height: 40vw;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background: #fff;
+}
+.alert_title{
+  font-size: 5vw;
+  height: 10vw;
+  line-height: 10vw;
+  text-align: center;
+}
+.alert_button{
+  position: absolute;
+  bottom: 0;
+  height: 10vw;
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+}
+.alert_content{
+  color: #999999;
+  height: 20vw;
+  padding: 0 5vw;
+}
+.alert_button_z{
+  display: inline-block;
+  height: 10vw;
+  line-height: 10vw;
+  width: 50%;
+}
+.alert_button_z button{
+  border-radius: 0;
+  color: #000;
+}
+button::after {
+    border-radius: 0;
+}
+button{
+    border-radius: 0;
+}

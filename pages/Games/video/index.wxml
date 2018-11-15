@@ -1,0 +1,23 @@
+<view class='box' >
+
+<!--引用-->
+<view wx:if="{{show}}" style="{{animation}}width:{{width}}px;height:{{height}}px;"  class='center' >
+  <cover-image bindtap='skip' wx:if="{{skipshow}}" src="https://static.zhanapp.com.cn/video/skip.png" class='skip'></cover-image>
+  <cover-image wx:if="{{playButton}}" bindtap='start'  src="https://static.zhanapp.com.cn/video/button.png" class='icon'></cover-image>
+  <cover-image wx:if="{{playButton}}" src="https://static.zhanapp.com.cn/video/logo.png" class='logo'></cover-image>
+  <image wx:if="{{playButton}}" class="start" src='https://static.zhanapp.com.cn/video/cover.jpg' style="width:100%;height:100%;" ></image>
+  <image wx:if="{{guodushow}}" class="guodu" src='https://static.zhanapp.com.cn/video/over.jpg' style="width:100%;height:100%;" ></image>
+  <video wx:if="{{!animation && !playButton}}" id="Video" style="width:100%;height:100%;" src="https://static.zhanapp.com.cn/video/MUSE2.m4v" show-play-btn="{{false}}" controls="{{false}}" show-center-play-btn="{{false}}" enable-progress-gesture="{{false}}" bindtimeupdate="videoend">
+  </video>
+</view>
+
+  <view class='answer' wx:for="{{list}}" wx:if="{{page_index == index}}">
+    <view class='title' style='animation:{{disappear}}'><text class='h1'>({{index+1}}/{{list.length}}){{item.title}}</text></view>
+    <view class='view'>
+      <view class="button" wx:for="{{item.anwser}}" style='animation:{{disappear}}'>
+        <dt_button data-id="{{index}}" value="{{index==0?'A':index==1?'B':index==2?'C':'D'}}. {{item}}" bindmyevent="{{!disappear?'myevent':''}}"></dt_button>
+      </view>
+    </view>
+    <image class='header' src='https://static.zhanapp.com.cn/video/head.jpg'></image>
+  </view>
+</view>

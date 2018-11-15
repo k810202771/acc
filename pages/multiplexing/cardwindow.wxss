@@ -1,0 +1,36 @@
+.cardwindow{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  text-align: center;
+  animation: card_w_first .3s;
+}
+.card_w_img{
+  margin: auto;
+}
+.card_w_title{
+  color: #fff;
+  font-size: 6vw;
+  margin: 12vw 10vw 5vw;
+}
+.card_w_button_box{
+  margin-top: 10vw;
+  overflow: visible;
+}
+.card_w_button{
+  background: #ccb89f;
+  color: #fff;
+  padding: 2vw 10vw;
+  font-size: 4vw;
+  border-radius: 90px;
+  margin: 0 2vw;
+}
+@keyframes card_w_first
+{
+  0%   {transform: scale3d(0,0,1);}
+  100% {transform: scale3d(1,1,1);}
+}

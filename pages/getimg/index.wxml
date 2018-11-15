@@ -1,0 +1,7 @@
+<!--pages/getimg/index.wxml-->
+<view class='box' style='background:{{bgcolor}};'>
+  <view wx:if="{{number}}" class='us dw' bindtap='us'>更换</view>
+  <view wx:if="{{number}}" class='dw' bindtap='dw'>下载</view>
+  <view wx:if="{{number}}" class='dw lf' bindtap='home'>首页</view>
+  <image mode='widthFix' style='width:{{img.width}};width:{{img.height}};' binderror="us" bindload="loadend" src='{{url}}'></image>
+</view>

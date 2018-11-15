@@ -1,0 +1,15 @@
+<import src="../multiplexing/alert.wxml" />
+<template is="alert" data="{{alertdata:alertdata}}" ></template>
+<image class="bg1" mode="widthFix" src="{{url}}images/bg1.png" ></image>
+<image class="bg2" mode="widthFix" src="{{url}}images/bg2.png" ></image>
+<view class="imgbox">
+  <image class="imgMax" mode="widthFix" style='{{animation_name}}' src="{{url}}images/{{cardindex}}.png" ></image>
+</view>
+<view class="textbox">
+  <text>你有 {{cardnumber}} 张【{{cardname}}】国宝卡\n</text>
+  <text>可以赠送给 {{name}}</text>
+</view>
+<view class="btbox">
+  <button class='button' bindtap="click" data-type='onpage' >我也要集卡</button>
+  <button class='button' bindtap='{{code==0?"click":""}}' data-type='receive' style='{{code==0?"":"background:#cbcbcb"}}'>送一张</button>
+</view>

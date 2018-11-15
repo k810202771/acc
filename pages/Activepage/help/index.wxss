@@ -1,0 +1,142 @@
+/* pages/Activepage/help/index.wxss */
+@import '../openbox/index.wxss';
+.header{
+  position: absolute;
+  top: 10vw;
+  left: 0;
+  right: 0;
+  overflow: visible;
+}
+.head{
+  position: absolute;
+  width: 50vw;
+  height: 30vw;
+  z-index: 10;
+  top: -10vw;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.headimg{
+  width: 20vw;
+  height: 20vw;
+  border-radius: 90px;
+  border: 3px solid #fff;
+  box-sizing: border-box;
+}
+.fontstr{
+  text-overflow:ellipsis;
+  overflow:hidden;
+  white-space:nowrap; 
+  font-size: 4vw;
+  color: #9a9a9a;
+  margin-top: -2vw;
+}
+.h-title{
+  position: absolute;
+  left: 0;
+  right: 0;
+  font-weight: bold;
+  font-size: 4vw;
+  top: 17vw;
+  text-align: center;
+}
+.h-box{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 12vw;
+  bottom: 0;
+  color: #aa800a;
+}
+.openbx{
+  position: absolute;
+  left: 0;
+  right: 0;
+
+}
+.fontmax{
+  font-size: 4.5vw;
+  font-weight: bold;
+}
+.fontmin{
+  font-size: 3vw;
+}
+.fontright{
+  float: right;
+  color: #9a9a9a;
+  font-size: 3vw;
+  line-height: 3vw;
+  margin-right: 5vw;
+}
+.fonttime{
+  background: #656565;
+  color: #fff;
+  padding: .5vw 1vw;
+  border-radius: 2px;
+}
+.surplus{
+
+  padding: .5vw 1vw;
+  border-radius: 2px;
+}
+.surplus{
+  text-align: center;
+  margin-top: 23vw;
+  padding: 5vw;
+  font-size:4vw;
+  color: #fff;
+}
+.surplus .fdfont{
+  color: #ffef00;
+  font-size:5vw;
+}
+.udbox{
+  padding: 0 0vw;
+}
+.udli{
+  height: 18vw;
+  line-height: 18vw;
+  overflow: visible;
+  border-bottom: 1px dashed #a1a1a1;
+  text-align: left;
+}
+.udimg{
+  vertical-align: middle;
+  height: 8vw;
+  width: 8vw;
+  margin: 0 3vw 0 2vw;
+  border-radius: 90px;
+}
+.udli .udtext{
+  color: #464646;
+  font-size: 3vw;
+}
+.udszj{
+  display: inline-block;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  white-space:nowrap;
+  max-width: 12vw;
+  height: 3.1vw;
+  line-height: 3.1vw;
+}
+.redtext{
+  color: #e83731;
+}
+.button{
+  overflow: visible;
+}
+.button::after{
+  border: 0;
+}
+.buttonyy{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: -3px;
+  background: #f77d0e;
+  border-radius: 90px;
+  z-index: -1;
+}

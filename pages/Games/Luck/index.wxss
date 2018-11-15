@@ -1,0 +1,260 @@
+page{
+  position: relative;
+  background: #f6e48e; /*linear-gradient(to right, red , blue);  标准的语法*/
+  width: 100%;
+  height: 100%;
+}
+.scroll{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  overflow: auto;
+}
+.title{
+  display: block;
+  /*/position: relative;*/
+  margin: -10px auto auto;
+  width: 90%;
+}
+.platform{
+  position: relative;
+  display: block;
+  margin: -15vw auto auto;
+  width: 90%;
+}
+.platform .text{
+  position: absolute;
+  top: 1.8vw;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 80%;
+}
+.platform .box{
+  position: absolute;
+  top: 23%;
+  left: 10.5%;
+  right: 10.5%;
+  bottom: 13.5%;
+}
+
+.platform .box .robj,.platform .box .vobj{
+  float: left;
+  width: 32.33%;
+  height: 32.33%;
+  margin: 0.5%;
+  border-radius: 5px;
+  background: #fff;
+  position: relative;
+  overflow: visible;
+}
+.platform .box .border{
+  position: absolute;
+  border-radius: 5px;
+  z-index: 999;
+}
+.platform .box .Kbutton{
+  float: left;
+  width: 32.33%;
+  height: 32.33%;
+  margin: 0.5%;
+  border-radius: 5px;
+  overflow: visible;
+}
+.robj image,.vobj image{
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  width: 80%;
+  height: 60%;
+  transform: translate3d(-50%,-50%,0);
+}
+.robj text,.vobj text{
+  font-size: 50%;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  left: 50%;
+  bottom: 5%;
+  transform: translate3d(-50%,0,0);
+}
+.Kbutton image{
+  width: 100%;
+  height: 100%;
+}
+.Kbutton{
+  position: relative;
+  z-index: 9;
+}
+.almt{
+  animation:buttonAnimation1 0.5s;
+  animation-delay:0s;
+}
+@keyframes buttonAnimation1
+{
+0%   {transform: scale3d(0.7,0.7,1);}
+100%   {transform: scale3d(1,1,1);}
+}
+
+.button{
+  margin: 30px auto;
+  width: 80%;
+  height: 40px;
+  background: #976447;
+  position: relative;
+  border-radius: 5px;
+  border: 0;
+  color: #fff;
+}
+.button .bg{
+  position: absolute;
+  top: 4px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 5px;
+  background: #7f3f1b;
+}
+.button .text{
+  position: absolute;
+  height: 40px;
+  line-height: 40px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.footerTitle{
+  display: block;
+  width: 6rem;
+  text-align: center;
+  margin: 10px auto;
+  border-radius: 90px;
+  border: 1px solid #000;
+}
+.content{
+  font-size: 14px; 
+  width: 80%;
+  margin: 20px auto;
+}
+
+/*中奖*/
+.WinningBg{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0,0.7);
+  z-index: 9999;
+  /*display: none;*/
+}
+.WinningWindow{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 70%;
+  height: 350px;
+  margin: auto;
+  animation: windowOpen 0.3s;
+  overflow: visible;
+}
+.w-t{
+  position: absolute;
+  top: -20px;
+  left: -15px;
+  right: -15px;
+  height: 0px;
+  /*background-color: #d6c264;*/
+  border:20px solid transparent; 
+  border-bottom:50px solid #d6c264;
+}
+.w-s{
+  position: absolute;
+  top: 0;
+  left: 5px;
+  right: 5px;
+  bottom: 0;
+  background-color: #f6e48e;
+}
+.w-img-gxn{
+  display: block;
+  margin: 10px auto auto auto;
+  height: 50px;
+  width: 100px;
+}
+.w-text-zj{
+  text-align: center;
+  color:#fff;
+  position: relative;
+  height: 30px;
+  line-height: 30px;
+ }
+.w-z-text{
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 30px;
+  line-height: 30px;
+  z-index: 2;
+}
+.w-z-bg{
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  color: #331103;
+  -webkit-text-stroke: 6px #331103;
+  z-index: 1;
+}
+.w-text-sm{
+  font-size: 14px;
+  margin: 10px 20px;
+}
+.w-text-pl{
+  font-size: 12px;
+  margin: 20px;
+  height: 60px;
+  line-height: 60px;
+  border-top: 1px solid #331103;
+  border-bottom: 1px solid #331103;
+  position: relative;
+}
+.w-text-pl-right{
+  float: right;
+}
+.w-text-pl view{
+  display: inline-block;
+  padding: 0 10px;
+}
+.w-text-py-left{
+  height: 1rem;
+  line-height: 1rem;
+  display: block;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(calc(-100% - 1px));
+}
+.w-text-py-right{
+  color: #686868;
+  height: 1rem;
+  line-height: 1rem;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  right: 0px;
+  transform: translateY(1px);
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}

@@ -1,0 +1,38 @@
+<view class='header'>
+  <view data-index="0" bindtap='onheadbutton' class='h-left'><text style='{{Selected == 0?"font-size:1em;opacity:1;":"font-size:0.8em;opacity:0.5;"}}'>世界排行榜</text></view>
+  <view class='h-line'></view>
+  <view data-index="1" bindtap='onheadbutton' class='h-right'><text style='{{Selected == 1?"font-size:1em;opacity:1;":"font-size:0.8em;opacity:0.5;"}}'>地区排行榜</text></view>
+</view>
+<view class='content'>
+  <scroll-view class='listBox' scroll-y scroll-top="{{scrolltop}}" lower-threshold="5" bindscrolltolower="scrolltolower">
+    <view style='background:{{index==0?"#fc7876":index==1?"#ffcd00":index==2?"#00d3e8":"#a8c4ff"}};' wx:for="{{listdata}}" class='list'>
+      <view class='leftjb'></view>
+      <view class='leftjbtext'> <text>{{index+1}}</text></view>
+      <image src='{{item.img}}'></image>
+      <view class='c-top'>
+        <text class='c-left'>{{item.name}}</text>
+        <text class='c-right'>{{item.city}}</text>
+      </view>
+      <view class='c-bottom'>
+        <text class='c-left'>{{item.tn}}</text>
+        <view class='c-right'><image mode='aspectFit' src='{{item.iconimg}}'></image>{{item.score}}</view>
+      </view>
+      
+    </view>
+  </scroll-view>
+  <view class='userBox'>
+    <view style='background:{{userrank.rank==0?"#fc7876":userrank.rank==1?"#ffcd00":userrank.rank==2?"#00d3e8":"#a8c4ff"}};' class='list'>
+      <view class='leftjb'></view>
+      <view class='leftjbtext'> <text>{{userrank.rank+1}}</text></view>
+      <image src='{{userrank.img}}'></image>
+      <view class='c-top'>
+        <text class='c-left'>{{userrank.name}}</text>
+        <text class='c-right'>{{userrank.city}}</text>
+      </view>
+      <view class='c-bottom'>
+        <text class='c-left'>{{userrank.level}}</text>
+        <view class='c-right'><image mode='aspectFit' src='{{userrank.iconimg}}'></image>{{userrank.current_start}}</view>
+      </view>
+    </view>
+  </view>
+</view>

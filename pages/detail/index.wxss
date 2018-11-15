@@ -1,0 +1,14 @@
+#bg{
+background-color: red;
+width: 750rpx;
+height: 1330rpx;
+}
+
+.image-style{  
+  position: absolute;  
+  bottom: 240px;  
+  right: 100px;  
+  width: 60px;  
+  height: 60px;  
+  z-index: 100;  
+}  

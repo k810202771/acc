@@ -1,0 +1,52 @@
+/* pages/me/index.wxss */
+@import '../Games/index.wxss';
+page{
+  background: #f5f5f5;
+  color: #474747;
+}
+.content{
+  position: absolute;
+  top: 90px;
+  left: 0;
+  right: 0;
+}
+.ui-icon{
+  font-size: 15vw;
+  margin: 0 6vw;
+}
+.Knob{
+  font-size: 3.5vw;
+  padding: 3vw;
+  background: #fff;
+}
+.text-right{
+  float: right;
+}
+.line{
+  height: 1px;
+  transform: scaleY(0.5);
+  background: #eee;
+}
+.icon-box{
+  text-align: center;
+  background: #fff;
+  margin-bottom: 1vw;
+}
+.fontmin{
+  font-size: 3.5vw;
+}
+button{
+  display: block;
+  border-radius: 0;
+  border: 0;
+  text-align: left;
+  line-height: 1rem;
+  color: #474747;
+}
+button::after{
+  border-radius: 0;
+  border: 0;
+  text-align: left;
+  line-height: 1rem;
+  color: #474747;
+}

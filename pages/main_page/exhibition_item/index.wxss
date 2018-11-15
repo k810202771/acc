@@ -1,0 +1,11 @@
+/* pages/main_page/exhibition_item/index.wxss */
+.exhibition-detail{
+    display: flex;
+    flex-direction: column;
+    padding: 20rpx;
+}
+
+.exhibition-detail image{
+    width: 100%;
+    height: auto;
+}

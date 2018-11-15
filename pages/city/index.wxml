@@ -1,0 +1,22 @@
+<!--pages/city/index.wxml-->
+<view class='header'>
+  <view class='city' data-type='city' bindtap='click'>{{city}} <text class='iconfont icon-jiantou'></text></view>
+  <view class='header_title'>
+      <view class='linebox'></view>
+      <text style='margin-left:2vw;'>正在展出</text>
+  </view>
+  <view class='headbg'></view>
+</view>
+<view class='list'>
+  <view class='listbox' wx:for="{{list}}" wx:key="{{item.objectId}}" data-type='{{item.type}}' data-id='{{item.objectId}}' bindtap="click">
+    <view class='left'><image mode='aspectFill' src='{{item.cover.url}}?imageView2/3/w/{{img.width}}/h/{{img.height}}/q/50|imageslim'></image></view>
+    <view class='right'>
+      <text>{{item.nameBase}}</text>
+      <view class='fontmin'>{{item.openDesc}}</view>
+      <view class='fontmin'>{{item.gallery.name}}</view>
+      <view class='textbottom'>{{item.feeDesc}}</view>
+      <view wx:if="{{item.ticket_type>0}}" class='purchase fontmin'>购票</view>
+    </view>
+    <view style='margin:2vw 0 4vw 0;background: {{index!=list.length-1?"#dadada":"#fff"}};' class='xline'></view>
+  </view>
+</view>

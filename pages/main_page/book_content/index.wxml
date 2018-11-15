@@ -1,0 +1,41 @@
+<import src="../../../wxParse/wxParse.wxml"/>
+<import src="../../../template/comment.wxml"/>
+<import src="../../../template/counts.wxml"/>
+<import src="../../../template/gallery_tags.wxml"/>
+<view class="header">
+
+<text id="item-namebase">{{resultsData.nameBase}}</text>
+ 
+<template is="counts" data="{{counts}}">
+</template>
+
+</view>
+
+<view class="wxParse">
+    <template is="wxParse" data="{{wxParseData:book_content.nodes}}"/>
+</view>
+<!--todo: 点赞 时间x -->
+<view class="comment">
+<block wx:for="{{comment}}" wx:key="objectId">
+<template is="comment" data="{{item}}"/>
+</block>
+ <view wx:if="{{total>6}}" id="more-comment">
+      <text bindtap="redirect_comment_list">查看所有评论 {{total}}条 > </text>
+    </view>
+  <view class="comment-text">
+      <input 
+        bindinput="input"   
+        id="text-input"
+        class="comment-input" 
+        placeholder-style="color:#ccc"
+        placeholder="请输入评论" 
+        focus="{{focus}}" 
+      />
+      <button 
+        size="mini"
+        plain = "{true}"
+        class="comment-btn" 
+        bindtap="commentClick"
+      >评论</button>
+    </view>
+</view>

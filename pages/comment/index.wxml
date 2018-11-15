@@ -1,0 +1,31 @@
+
+<!--pages/comment/index.wxml-->
+<import src="../../template/rating_bar/rating.wxml" />
+<view class="container">
+
+  <!--<view bindtap="tapEvent" bindtouchmove="ballMoveEvent">
+<block  wx:for="{{star_state}}">
+<image  style="width:45rpx;height:45rpx" src="{{item}}"/>
+</block>
+</view>-->
+  <view class="title">
+    <text bindtap="item_click" style="font-size:{{current==0?'30rpx':'20rpx'}}" data-id="0">想看</text>
+    <text bindtap="item_click"  style="font-size:{{current==1?'30rpx':'20rpx'}}" data-id="1">看过</text>
+  </view>
+  <swiper bindchange="change" style="height:600rpx" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" current="{{current}}" interval="{{interval}}" duration="{{duration}}">
+    <block>
+      <swiper-item class="swiper-item">
+        <textarea bindconfirm="onConfirmed" class="text" maxlength="300" />
+      </swiper-item>
+      <swiper-item class="swiper-item">
+        <text>点击星星评分</text>
+        <view style="height:100rpx">
+         <template  is="rating" data="{{star_state}}" />
+        </view>
+       
+        <textarea bindconfirm="onConfirmed" class="text" />
+     
+      </swiper-item>
+    </block>
+  </swiper>
+</view>

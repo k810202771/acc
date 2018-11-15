@@ -1,0 +1,74 @@
+<!--pages/detailed/index.wxml
+<view class='title titlefont'>订单号：{{options.shopid}}</view>
+-->
+<view class='odt_box'>
+  <view class='odt'>订单号：{{options.orderlist.shop_id}}<text class='odt-right odt-right-color'>{{options.orderlist.order_status==0?"订单待支付":options.orderlist.order_status==1?"订单已付款":options.orderlist.order_status==2?"订单已发货":options.orderlist.order_status==3?"已签收":options.orderlist.order_status==5?"订单已关闭":options.orderlist.order_status==7?"已退款":"付款异常，请联系客服"}}</text></view>
+  <view class='line'></view>
+  <view class='imghead'>
+    <view class='titleleft'><image mode='aspectFill' src='{{options.orderlist.product_img}}'></image></view>
+    <view>
+      <view class='imgtitle'>{{options.orderlist.product_title}}</view>
+      <!--<view class='imgtitle fontmin'>今日美术馆</view>-->
+      <view class='imgtitle fontmin'>{{options.orderlist.product_field}}</view>
+      <!--<view class='imgtitle fontmin'>预计5月16日前发货</view>-->
+      <view class='imgtitle fontmin bottom'>下单时间：{{options.orderlist.date_time}}</view>
+    </view>
+  </view>
+  <view class='line'></view>
+  <view class='odt'>数量：{{options.orderlist.product_count}}<text class='odt-right'>邮费：￥{{options.orderlist.product_freight}}　合计：￥{{options.orderlist.product_aprice}} + {{options.orderlist.product_integral}}积分</text></view>
+  <view wx:if="{{options.orderlist.order_status==0}}" class='line'></view>
+  <view class='odt-xl'><text class='odt-right-color'>该票由{{options.orderlist.platform_type==0?"票牛平台":"知亦行"}}提供</text><text wx:if="{{options.orderlist.order_status==0}}" class='odt-fuk' data-id='{{options.orderlist.shop_id}}' data-type='payment' bindtap='click'>付款</text></view>
+  <view class='line'></view>
+  <view class='odt-xl' wx:if="{{options.orderlist.product_pnnb && options.orderlist.p_show}}"><text class='odt-right-color'>取票请出示,{{options.orderlist.platform_name + "订单号：【" + options.orderlist.product_pnnb}}】</text></view>
+</view>
+
+
+
+<view class='ucity'>
+  <view class='left'>
+    <text class='cityicon iconfont icon-dibiao' style='color:#474747;'></text>
+  </view>
+  <view class='right'>
+    <view class='titlefont'>{{orderlist.deliverType==1?"收货地址":orderlist.deliverType==2?"自取":orderlist.deliverType==3?"现场自取":orderlist.deliverType==5?"电子票":""}}</view>
+    <view class='line' style='margin:1vw 0;'></view>
+    <view><text>收票人：{{orderlist.receiverName}}</text><text class='fontright'>{{orderlist.phone}}</text></view>
+    <view wx:if="{{orderlist.deliverType==1}}"><text>收货地址：{{orderlist.address}}</text></view>
+  </view>
+</view>
+
+<view class='ucity' wx:if="{{orderlist.onSiteGetInfo}}">
+  取票地址：{{orderlist.onSiteGetInfo.address}}
+  <view class='Tright' wx:for="{{orderlist.onSiteGetInfo.contactPersons}}">
+    <text>\n派票人：{{item.name}}</text>
+    <view>电话：
+      <text class='Tright'>
+        <text wx:for="{{item.phones}}">{{index>0?"\n":""}}01064016900</text>
+      </text>
+    </view>
+  </view>
+
+</view>
+
+<view class='ucity' wx:if="{{orderlist.code}}" bindtap='oncopy'>
+  优惠码：{{orderlist.code}} !仅可用于本展览 (点击复制)
+</view>
+
+<view class='ucity' wx:if="{{orderlist.expressInfo}}">
+  <view style='margin-bottom:5vw;'>{{orderlist.expressInfo.company}}<text class='Tright'>单号：{{orderlist.expressInfo.expressNo}}</text></view>
+  <view wx:for="{{orderlist.expressInfo.expressEvents}}" class='yjlist'>
+    <view class="yjleft"><text>{{item.timeYstr}}</text><text>\n{{item.timeHstr}}</text></view>
+    <view class='yjcenter'></view>
+    <view class='yjyuandian'></view>
+    <view class='yjright'>{{item.description}}</view>
+  </view>
+
+</view>
+
+
+<view class='titlefont titledzp' data-number='{{item.serialNumber}}' wx:for="{{orderlist.ticketReceipts}}" bindtap='click' data-type='dzp' wx:if="{{orderlist.ticketReceipts}}">
+票号：{{item.serialNumber}} <text class='fontmin'> ({{item.status==1?"有效":item.status==2?"已消费":item.status==3?"已撤销":"取票时，请出示二维码"}})</text><text class='iconfont icon-erweima fontright'></text>
+
+<view style='text-align:center;margin-top:3vw;' wx:if="{{dzpnumber==item.serialNumber}}">
+  <image style='width:50vw;height:50vw;' src='https://www.zhanapp.com.cn/php/code.php?value={{item.status==100?"pnmc://merchant_todo_detail?orderId=":""}}{{item.serialNumber}}'></image>
+</view>
+</view>

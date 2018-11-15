@@ -1,0 +1,6 @@
+<view>
+<view class="me-header">
+<image src="{{info.avatarUrl}}"></image>
+<text>{{info.nickName}}</text>
+</view>
+</view>

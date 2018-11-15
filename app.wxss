@@ -1,0 +1,93 @@
+/**app.wxss**/
+/* JSON文件里面的第三个图标
+      {
+        "pagePath": "pages/city/index",
+        "iconPath": "images/piao.png",
+        "selectedIconPath": "images/piao_on.png",
+        "text": "购票"
+      },
+*/
+@font-face {
+  font-family: 'iconsfont';  /* project id 856799 */
+  src: url('//at.alicdn.com/t/font_856799_zskt8xddufq.eot');
+  src: url('//at.alicdn.com/t/font_856799_zskt8xddufq.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_856799_zskt8xddufq.woff') format('woff'),
+  url('//at.alicdn.com/t/font_856799_zskt8xddufq.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_856799_zskt8xddufq.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family:"iconsfont" !important;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-weixinzhifu:before { content: "\e600"; } /*微信支付图标*/
+
+.icon-erweima:before { content: "\e606"; } /*二维码*/
+
+.icon-jiantou:before { content: "\e65e"; } /*右箭头*/
+
+.icon-icon-yxj-express:before { content: "\e667"; } /*快递图标*/
+
+.icon-haofangtuo400iconfont2yinxing:before { content: "\e6f0"; } /*房子图标*/
+
+.icon-xinfang:before { content: "\e62d"; } /*楼房图标*/
+
+.icon-dibiao:before { content: "\e676"; } /*地图标记点*/
+
+.icon-retest:before { content: "\e633"; } /*再测一次*/
+
+.icon-cityxian:before { content: "\e601"; } /*西安*/
+.icon-hanzhou:before { content: "\e602"; } /*杭州*/
+.icon-beijing:before { content: "\e603"; } /*北京*/
+.icon-chengdu:before { content: "\e604"; } /*成都*/
+.icon-guangzhou:before { content: "\e605"; } /*广州*/
+.icon-qita:before { content: "\e607"; } /*其他*/
+.icon-nanjing:before { content: "\e608"; } /*南京*/
+.icon-shanghai:before { content: "\e609"; } /*上海*/
+.icon-shenzhen:before { content: "\e60a"; } /*深圳*/
+.icon-tianjin:before { content: "\e60b"; } /*天津*/
+.icon-shuzhou:before { content: "\e60c"; } /*苏州*/
+.icon-wuhan:before { content: "\e60d"; } /*武汉*/
+
+.icon-dsh:before { content: "\e882"; } /*待收货*/
+.icon-dff:before { content: "\e884"; } /*待发货*/
+.icon-dfk:before { content: "\e936"; } /*待付款*/
+
+
+@import 'style/weui.wxss';
+@import "/wxParse/wxParse.wxss";
+
+page{
+  font-family: "微软雅黑";
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.comment-text{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 30rpx;
+}
+#text-input {
+  flex: 1;
+  border-width: 1rpx;
+  border-color: gray;
+  border-radius: 1rpx;
+  border-style: solid;
+}
+
+/*window弹出*/
+@keyframes windowOpen
+{
+0%   {transform: scale3d(0,0,1);}
+70%  {transform: scale3d(1.1,1.1,1);}
+100%  {transform: scale3d(1,1,1);}
+}

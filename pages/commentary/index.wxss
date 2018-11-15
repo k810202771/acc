@@ -1,0 +1,92 @@
+/* pages/commentary/index.wxss */
+.xline{
+  height: 1px;
+  transform: scaleY(0.5);
+}
+.logo_box{
+  text-align: center;
+  padding: 5vw;
+}
+.title{
+  font-weight: bold;
+  border-left: 4px solid #555;
+  padding-left: 2vw;
+  margin: 5vw;
+  font-size: 5vw;
+}
+.content{
+  color: #555;
+  margin: 5vw;
+  font-size: 4vw;
+}
+.placeholder{
+  height: 15vw;
+}
+.audio{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 15vw;
+  line-height: 15vw;
+  background: #fff;
+  z-index: 99;
+  overflow: hidden;
+}
+.ProgressBarBg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background:#efefef;
+  height: 2px;
+}
+.ProgressBar{
+  background: #000000;
+  height: 100%;
+  width: 30%;
+}
+.button{
+  /*position: absolute;*/
+  float: left;
+  position: relative;
+  height: 10vw;
+  width: 10vw;
+  left: 4vw;
+  margin: 2.5vw 1vw;
+  border-radius: 90px;
+  border: 1px solid #727272;
+}
+.play{
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 1px);
+  transform: translate3d(-50%,-50%,0);
+  border-left: 5px solid #727272;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  height: 0;
+  width: 0;
+}
+.suspend{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%,-50%,0);
+  border-left: 2px solid #727272;
+  border-right: 2px solid #727272;
+  width: 2px;
+  height: 25%;
+}
+.time{
+  color: #727272;
+  position: absolute;
+  font-size: 4vw;
+  right: 3vw;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 4vw;
+  line-height: 4vw;
+  overflow: visible;
+}

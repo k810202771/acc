@@ -1,0 +1,57 @@
+<!--标题-->
+<view class='boxpad title'>
+  {{title}}
+</view>
+
+
+
+
+<view class='boxpad detailDesc'>
+  <!--选择场次-->
+  <view class='detatitle'>{{activityEvents.length < 25?"选择场次":"选择日期"}}</view>
+  <view wx:if="{{activityEvents.length < 25}}" class='detailDescbox' wx:for="{{activityEvents}}" style='margin-left:{{index%2==0?"0":"1vw"}};color:{{x_activityEvents==item.id?"#ff002d":""}};border-color:{{x_activityEvents==item.id?"#ff002d":"#eee"}};' data-specificationp="{{item.specification}}" data-id='{{item.id}}' data-type='detailDes' bindtap='click'>
+    {{item.specification}}
+  </view>
+
+  <picker wx:if="{{activityEvents.length >= 25}}" mode="date" start="{{startDate}}" end="{{endDate}}" bindchange="bindDateChange">
+    <view class="picker" style='color:#ff002d;border-color:#ff002d;'>
+      {{specificationp}}<text class='textright icon-jiantou iconfont icontext'></text>
+    </view>
+  </picker>
+
+  <view class='line'></view>
+  <view class='detatitle'>选择票档</view>
+  <!--选择票档-->
+  <view wx:for="{{activity}}" class='activity' style='margin-left:{{index%2==0?"0":"1vw"}};color:{{activityid==item.ticketGroup.ticketGroupId?"#ff002d":item.ticketGroup.ticketGroupId?"":"#a5a5a5"}};border-color:{{activityid==item.ticketGroup.ticketGroupId?"#ff002d":item.ticketGroup.ticketGroupId?"#848484":"#eee"}};' data-tId='{{item.ticketGroup.ticketCategoryId}}' data-id='{{item.ticketGroup.ticketGroupId}}' data-selling='{{item.ticketGroup.selling}}' data-originprice='{{item.originPrice}}' data-salePrice='{{item.ticketGroup.salePrice}}' data-specification='{{item.specification}}' data-type='activity' bindtap='{{item.ticketGroup.ticketGroupId?"click":""}}'>
+    <view class='zhekou' wx:if="{{item.originPrice > item.ticketGroup.salePrice}}">折</view>
+    <text>{{item.specification}}\n<text class='description'>{{item.description}}</text></text>
+  </view>
+  <view class='line'></view>
+  <view class='detatitle'>数量</view>
+  <view class='activity' data-number='{{item}}' data-type='number' wx:for="{{[1,2,3,4,5,6]}}" wx:if="{{item<=selling}}" style='color:{{activityNumber==item?"#ff002d":""}};border-color:{{activityNumber==item?"#ff002d":item.ticketGroup.ticketGroupId?"#848484":"#eee"}};' bindtap='click'>
+    {{item}}
+  </view>
+</view>
+
+<!--购票须知-->
+<view class='boxpad detailDesc'>
+  <view class='detatitle'>购票须知</view>
+  <text class='detacontent'>{{detailDesc}}</text>
+</view>
+
+<view class="detailDesc">
+  <view class="shopleft"></view>
+</view>
+
+
+<view class="shopbox detailDesc">
+  <view class="shopleft">
+  <view class='shopvbox'>
+    <view>￥{{showprice}} + {{showpoints}}积分</view>
+    <view class='fontmin'>价格：<text>￥{{showoriginprice}}</text></view>
+  </view>
+  </view>
+  <view data-type='shop' class="shopright" bindtap='click'>
+购买
+  </view>
+</view>

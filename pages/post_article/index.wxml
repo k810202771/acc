@@ -1,0 +1,45 @@
+<view class="container">
+<view class="item-images">
+ <block wx:for="{{images_path}}">
+  <image bindtap="item_tap" data-i="{{index}}" class="item-image" mode="aspectFill" src="{{item}}"></image>
+</block>
+
+</view>
+
+
+   <!--<view class="item-article"  >
+      <textarea 
+        name="input"
+        bindinput="input"   
+        id="text-input"
+        class="article-input" 
+        placeholder-style="color:#ccc"
+        placeholder="请输入评论" 
+        auto-height
+        focus="{{focus}}" 
+      />
+    </view>-->
+  
+
+  <form bindsubmit="formSubmit" >
+
+   <view  class="item-article">
+      <textarea 
+       name="input"
+        bindinput="input"   
+        id="text-input"
+        class="article-input" 
+        placeholder-style="color:#ccc"
+        placeholder="请输入评论" 
+        auto-height
+        focus="{{focus}}" 
+      />
+
+
+<!-- bindtap="post_article" id="post"-->
+  
+      <button formType="reset" class="entrance"  bindtap="post_article" id="post" type="primary" style="background-color:#536267;height:80rpx;width:100%;color:white;border-radius:0rpx;">发布</button>
+</view>
+
+    </form>  
+</view>

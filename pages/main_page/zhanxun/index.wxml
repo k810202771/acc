@@ -1,0 +1,92 @@
+<import src="../../../wxParse/wxParse.wxml" />
+<import src="../../../template/comment.wxml" />
+<import src="../../../template/counts.wxml" />
+<import src="../../../template/gallery_tags.wxml" />
+<import src="../../../template/app_code/appCode.wxml" />
+<import src="/pages/multiplexing/cardwindow.wxml" />
+<template is="cardwindow" data="{{card:card}}" ></template>
+
+<cover-view class="shopboxBat" style='left:0;right:50%;background:#ffa800;' data-type='group' bindtap='clickpls' wx:if="{{shopid && shopid!=-1 && group_buy_id!=-1}}">
+  我要开团
+</cover-view>
+<cover-view class="{{group_buy_id==-1?'shopbox':'shopboxBat'}}" data-type='shop' bindtap='clickpls' wx:if="{{shopid && shopid!=-1}}">
+  {{group_buy_id==-1?"立即购买":"单独购买"}}
+</cover-view>
+<!--<view class='neirong'>-->
+  <view class="header">
+    <image mode="aspectFill" style="width:100vw;height:50vw" src="{{resultsData.cover.url}}?imageView2/3/w/{{data.windowWidth}}/h/{{data.windowWidth}}/q/90|imageslim"></image>
+    <view class="header-detail">
+      <view class="header-detail-title">
+        <text id="title">{{resultsData.nameBase}}</text>
+        <text id="subtitle" style="color:#959595">{{resultsData.subNameBase}}</text>
+      </view>
+      <image bindtap='fenxiangclick' class='header-detail-title-img' mode='widthFix' src='https://static.zhanapp.com.cn/downloadFile/button.png'></image>
+      <template is="app_code"></template>
+    </view>
+    <template is="tags" data="{{tag}}">
+    </template>
+    <template is="counts" data="{{counts}}">
+    </template>
+    <view class="zhanxun-detail">
+      <view class="zhanxun-detail-items">
+        <view class="zhanxun-detail-item">
+          <view wx:if="{{resultsData.openType=='0'}}">
+            <text>时间 常展</text>
+          </view>
+          <view wx:else>
+            <text>时间</text>
+            <text class="zhanxun-detail-item-detail"> {{resultsData.openingHours.startDate}} 至 {{resultsData.openingHours.endDate}} {{resultsData.openingHours.startTime}}-{{resultsData.openingHours.endTime}}</text>
+          </view>
+          <!--<text>{{resultsData.openIntro}}</text>-->
+        </view>
+        <view class="zhanxun-detail-item">
+          <text>地点 </text>
+          <text class="zhanxun-detail-item-detail">{{resultsData.galleryNameBase}}</text>
+        </view>
+        <view class="zhanxun-detail-item">
+          <text style="width:68rpx">地址 </text>
+          <text class="zhanxun-detail-item-detail">{{resultsData.galleryAddress}}</text>
+        </view>
+        <view class="zhanxun-detail-item">
+          <text>费用 </text>
+          <text class="zhanxun-detail-item-detail">{{resultsData.feeType==1?'收费':'免费'}} \t {{resultsData.feeItems}}</text>
+        </view>
+
+        <!--<text>门票 {{resultsData.feeIntro}}</text>-->
+      </view>
+    </view>
+  </view>
+
+ <video style='display:{{video_url?"black":"none"}};' class='video' src="{{video_url}}" poster="{{resultsData.cover.url}}"></video>
+
+  <view class="wxParse">
+    <template is="wxParse" data="{{wxParseData:zhanxun.nodes}}" />
+  </view>
+
+  <!--todo: 点赞 时间x -->
+  <view class="comment">
+    <block wx:for="{{comment}}" wx:key="objectId">
+      <template is="comment" data="{{item}}" />
+    </block>
+
+    <view wx:if="{{total>6}}" id="more-comment">
+        <text bindtap="redirect_comment_list">查看所有评论 {{total}}条 > </text>
+      </view>
+    <view>
+
+
+
+      <!--<view class="comment-text">
+        <input bindinput="input"   id="text-input" placeholder="这个只有在按钮点击的时候才聚焦" focus="{{focus}}" />
+        <button bindtap="commentClick">评论</button>
+      </view>-->
+    </view>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class="comment-text">
+        <input name="input" bindinput="input" id="text-input" class="comment-input" placeholder-style="color:#ccc" bindtap="commentClick" placeholder="请输入评论" focus="{{focus}}" />
+        <button formType="reset" size="mini" plain="{true}" class="comment-btn" bindtap="commentClick">评论</button>
+      </view>
+    </form>
+    <view class="shopbox" style='position: relative;z-index: 0;background:transparent;' wx:if="{{shopid && shopid!=-1}}"></view>
+  <!--</view>-->
+</view>

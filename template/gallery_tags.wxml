@@ -1,0 +1,12 @@
+<template name="tag">
+  <image style="width:100rpx;height:30rpx;padding-right:30rpx" src="{{item}}"></image>
+</template>
+
+<template name="tags">
+  <view >
+    <block wx:for="{{tag}}" wx:key="unique">
+      <template is="tag" data="{{item}}">
+      </template>
+    </block>
+  </view>
+</template>

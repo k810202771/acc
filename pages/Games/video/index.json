@@ -1,0 +1,6 @@
+{
+  "disableScroll":true,
+  "usingComponents": {
+    "dt_button":"/components/button/dt_button"
+  }
+}

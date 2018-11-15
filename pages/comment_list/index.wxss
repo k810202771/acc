@@ -1,0 +1,6 @@
+/* pages/comment_list/index.wxss */
+@import '../../template/comment.wxss';
+.comment{
+    margin-left: 50rpx;
+
+}

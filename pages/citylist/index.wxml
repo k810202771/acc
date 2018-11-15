@@ -1,0 +1,19 @@
+<view class='pige'>
+  <view class='title'>中国城市</view>
+  <view class='city_box' wx:for="{{list}}" data-name="{{item.name}}市" bindtap='click' style='{{item.name+"市"==city?"border: 1px solid #4b8feb;color:#4b8feb;":"border: 1px solid transparent;color:#474747"}};margin-right:{{index%2==0?"4vw":"0"}};'>
+    <view class='left'>
+      <view class='city_name'>{{item.name}}</view>
+      <view class='city_number'>{{item.number}}个展览</view>
+    </view>
+    <view class='right'>
+      <view class='{{item.img}} iconfont cityicon' style='font-size:12vw;color:#b8b8b8;'></view>
+      
+      <!--
+      <image style='' style='{{item.name+"市"==city?"background:url(" + item.img +"?imageView2/3/w/" + img.width +"/h/" + img.height + "/q/80|imageslim) #4b8feb;background-size:100% 100%;background-blend-mode: Lighten;":"background:url(" + item.img +"?imageView2/3/w/" + img.width +"/h/" + img.height + "/q/80|imageslim);background-size:100% 100%;"}}'></image>
+      -->
+    </view>
+  </view>
+</view>
+<!--
+src='{{item.img}}?imageView2/3/w/{{img.width}}/h/{{img.height}}/q/50|imageslim'
+-->

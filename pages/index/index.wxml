@@ -1,0 +1,6 @@
+<!--pages/index/index.wxml-->
+<view class='box'>
+  <image mode='widthFix' src='https://static.zhanapp.com.cn/downloadFile/login.jpg?imageView2/3/w/{{data.windowWidth * data.pixelRatio}}/h/{{data.windowWidth * data.pixelRatio}}/q/80|imageslim'>
+  </image>
+  <button open-type="getUserInfo" bindgetuserinfo='click' class='login' >授权</button>
+</view>

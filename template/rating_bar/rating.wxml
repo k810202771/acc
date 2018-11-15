@@ -1,0 +1,7 @@
+<template name="rating" >
+<view  bindtap="tapEvent">
+<block  wx:for="{{star_state}}" wx:key="unique">
+<image  style="margin-left:10rpx;width:45rpx;height:45rpx" src="{{item}}"/>
+</block>
+</view>
+</template>

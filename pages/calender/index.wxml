@@ -1,0 +1,64 @@
+ <import src="../../template/exhibition_item/exhibition_item.wxml" />
+<view class="calendar__wrp">
+  <scroll-view style="height: 100vh;" scroll-y="true"  bindscrolltolower="calender_lower">
+    <view class="calendar__navbar">
+    <view class="calendar__arrow" data-type="0" bindtap="switchMonth">{{"<"}}</view>
+    <view class="calendar__date">{{date}}</view>
+    <view class="calendar__arrow" data-type="1" bindtap="switchMonth">{{">"}}</view>
+    <view class="city-tag" bindtap="naviCityList">
+       <text style="font-size:30rpx;"   type="default">{{city}}</text> 
+    <text style="font-size:18rpx">▼</text>
+    </view>
+
+  </view>
+  <view class="calendar__head">
+    <view wx:for="{{week}}">
+      {{item}}
+    </view>
+  </view>
+  <text>{{}}</text>
+  <view class="calendar__body">
+    <view wx:for="123456" class="calendar__rows" wx:for-index="row">
+      <view class="calendar__cols" wx:for="1234567" wx:for-index="col">
+        <view class="{{colors[row][col]}}" bindtap="clickItem" data-row="{{row}}" data-col="{{col}}" data data-day="{{row * 7 - monthStart + col >-1 && row * 7 - monthStart + col < day ? row * 7 + col - monthStart + 1 : ''}}">
+          {{
+            row * 7 - monthStart + col >-1 && row * 7 - monthStart + col < day ? row * 7 + col - monthStart + 1 : ''
+          }}
+        
+        </view>
+      </view>
+    </view>
+  </view>
+      <block wx:for="{{exhibitionData}}" wx:key="objectId">
+        <template is="item-exhibition" data="{{item}}" />
+      </block>
+  </scroll-view>
+  </view> 
+
+
+  <!--<view class="calendar__wrp">
+  <view class="calendar__navbar">
+    <view class="calendar__arrow" data-type="0" bindtap="switchMonth">{{"<"}}</view>
+    <view class="calendar__date">{{date}}</view>
+    <view class="calendar__arrow" data-type="1" bindtap="switchMonth">{{">"}}</view>
+    <button bindtap="naviCityList" type="default">{{city}}</button>
+  </view>
+  <view class="calendar__head">
+    <view wx:for="{{week}}">
+      {{item}}
+    </view>
+  </view>
+  <text>{{}}</text>
+  <view class="calendar__body">
+    <view wx:for="123456" class="calendar__rows" wx:for-index="row">
+      <view class="calendar__cols" wx:for="1234567" wx:for-index="col">
+        <view class="{{colors[row][col]}}" bindtap="clickItem" data-row="{{row}}" data-col="{{col}}" data data-day="{{row * 7 - monthStart + col >-1 && row * 7 - monthStart + col < day ? row * 7 + col - monthStart + 1 : ''}}">
+          {{
+            row * 7 - monthStart + col >-1 && row * 7 - monthStart + col < day ? row * 7 + col - monthStart + 1 : ''
+          }}
+        
+        </view>
+      </view>
+    </view>
+  </view>
+</view>-->

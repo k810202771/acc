@@ -1,0 +1,10 @@
+<view>
+
+
+
+
+
+<image bindtap="post_article" id="post" mode="aspectFill" style="width:100rpx;height:100rpx" src="/images/post.png"></image>
+
+
+</view>

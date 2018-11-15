@@ -1,0 +1,296 @@
+page{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #efefef;
+  font-size: 16px;
+  color: #3d3d3d;
+}
+.timeCanvas{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 30px;
+  margin: auto;
+  text-align: center;
+  font-size: 20px;
+  width: 80px; 
+  height: 80px;
+  line-height: 80px;
+}
+.textCanvas{
+  position: absolute;
+  height: 2rem;
+  line-height: 2rem;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  overflow: visible;
+}
+.UserIcon{
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 30px;
+  text-align: center;
+  /*color: #4b4b4b;*/
+  font-size: 14px;
+}
+.Uservpn{
+  position: absolute;
+  width: 50%;
+  height: 100px;
+  top: 130px;
+  /*color: #4b4b4b;*/
+  font-size: 14px;
+}
+
+.UserVpnLeft{
+  left: 0;
+  text-align: left;
+}
+.UserVpnRight{
+  right: 0;
+  text-align: right;
+}
+.Uservpn text{
+  display: inline-block;
+  margin-top: 5px;
+  text-align: center;
+}
+.pnLeft_o1{
+  animation:pnLeft_o1 0.5s;
+}
+.pnLeft_o2{
+  animation:pnLeft_o2 0.5s;
+}
+/*按钮动画*/
+@keyframes pnLeft_o1
+{
+0%   {transform: translate3d(-100%,0,0);}
+100%   {transform: translate3d(0,0,0);}
+}
+/*按钮动画*/
+@keyframes pnLeft_o2
+{
+0%   {transform: translate3d(100%,0,0);}
+100%   {transform: translate3d(0,0,0);}
+}
+
+
+.UserVpnLeft text{
+  border-radius: 0 90px 90px 0;
+}
+.UserVpnRight text{
+  border-radius: 90px 0 0 90px;
+}
+.Uservpn_o1 text{
+  background: #fff;
+  padding: 4px 15px;
+  font-size: 0.8em;
+}
+.Uservpn_o2 text{
+  color: #fff;
+  padding: 4px 30px;
+  background: #ffcc35;
+  font-size: 1em;
+}
+.UserIcon text{
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+}
+.UserIcon image{
+  height: 70px;
+  width: 70px;
+  margin: auto auto 5px auto;
+  border-radius: 5px;
+  display: block;
+}
+.Userleft{
+  left: 10px;
+}
+.Userright{
+  right: 10px;
+}
+.question{
+  position: absolute;
+  top: 130px;
+  left: 8%;
+  right: 8%;
+  height: 150px;
+  text-align: center;
+  padding: 10px;
+  margin: auto;
+}
+.question .timu{
+  font-size: 4.5vw;
+}
+.content{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top:50%;
+    transform: translateY(-50%);
+    overflow: visible;
+}
+.question image{
+  margin: auto auto 10px auto;
+  display: block;
+  width: calc(100% - 20px);
+  height: 80px;
+}
+.Choice{
+  position: absolute;
+  top: 300px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.Cleft{
+  position: absolute;
+  width: 18%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  color: #65d4ef;
+  font-weight:bold;
+}
+.Cleft .ProgressBar{
+  background: #65d4ef;
+}
+.CChoice{
+  position: absolute;
+  top: 20px;
+  bottom: 1.5rem;
+  left: 18%;
+  right: 18%;
+  overflow: visible;
+}
+.Cright{
+  position: absolute;
+  width: 18%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  color:#fe7273;
+  font-weight:bold;
+}
+.Cright .ProgressBar{
+  background: #fe7273;
+}
+
+.ProgressBarBox{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 2rem;
+  bottom: 1rem;
+  width: 8px;
+  border-radius: 90px;
+  border: 3px solid #747675;
+  margin: auto;
+  background: #747675;
+}
+.ProgressBar{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-radius: 90px;
+  transition: height 1s linear;
+}
+
+
+.ChoiceBOX{
+  font-size: 4.5vw;
+  width: 100%;
+  height: 25%;
+  position: relative;
+  overflow: visible;
+}
+.ChoiceButton{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 5px;
+  bottom: 5px;
+  background: #fff;
+  border-radius: 5px;
+  text-align: center;
+  /*color: #343434;*/
+}
+.ChoiceButtonAnimation{
+  animation:buttonAnimation1 0.5s;
+  animation-fill-mode: forwards;
+}
+.ChoiceButtonAnimation2{
+  animation:buttonAnimation2 0.5s;
+  animation-delay:0s;
+}
+
+.ChoiceButton .text{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translate3d(0,-50%,0);
+  overflow: hidden;
+}
+.ChoiceAnimation1{
+  animation-delay:0.2s;
+}
+.ChoiceAnimation2{
+  animation-delay:0.4s;
+}
+.ChoiceAnimation3{
+  animation-delay:0.6s;
+}
+.problemIndex{
+  position: relative;
+  left: 50%;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  width: 80px;
+  color: #fff;
+  padding: 0 10px;
+  background: #777777;
+  font-weight: 300;
+  border-radius: 90px;
+  transition: transform 0.5s,opacity 0.5s;
+}
+.ulc{
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  height: 15px;
+  width: 15px;
+  transform: translateY(-50%);
+}
+.urt{
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  height: 15px;
+  width: 15px;
+  transform: translateY(-50%);
+}
+
+/*按钮动画*/
+@keyframes buttonAnimation1
+{
+0%   {transform: scale3d(0.1,0.1,1);}
+70%   {transform: scale3d(1.1,1.1,1);}
+100%   {transform: scale3d(1,1,1);}
+}
+/*按钮动画*/
+@keyframes buttonAnimation2
+{
+0%   {transform: scale3d(0.8,0.8,1);}
+70%   {transform: scale3d(1.1,1.1,1);}
+100%   {transform: scale3d(1,1,1);}
+}

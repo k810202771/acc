@@ -1,0 +1,7 @@
+/* pages/friend_circle/index.wxss */
+#post{
+    position: fixed;
+    z-index: 999;
+    left: 40%;
+    bottom: 20rpx;
+}

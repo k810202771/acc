@@ -1,0 +1,27 @@
+@import "../rating_bar/rating.wxss";
+
+.exhibition-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+  margin: 10rpx;
+}
+
+.exhibition-item-text {
+  display: flex;
+  align-self: stretch;
+  flex: 1;
+  flex-direction: column;
+}
+
+.item-details {
+  display: flex;
+  flex-direction: column;
+  font-size: 26rpx;
+}
+
+#item-title {
+  font-size: 35rpx;
+}
+

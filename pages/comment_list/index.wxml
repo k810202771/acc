@@ -1,0 +1,10 @@
+
+<!--pages/comment_list/index.wxml-->
+<import src="../../template/comment.wxml" />
+<view class="comment">
+  <scroll-view scroll-y="true" style="height: 100vh;" bindscrolltolower="lower">
+    <block wx:for="{{comment}}" wx:key="objectId">
+      <template is="comment" data="{{item}}" />
+    </block>
+  </scroll-view>
+  </view>

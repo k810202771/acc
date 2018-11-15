@@ -1,0 +1,31 @@
+<view class="c-scroll" wx:if="{{type==0}}">
+<view class="title"><view class='left-line'></view> 活动须知<view class='right-line'></view></view>
+<text>1.排位赛，系统会为你匹配一个实力相当的对手，每场比赛共5题，10秒内选出你认为正确的唯一选项。
+2.对战5题后，得分高的一方将获胜，并获得相应的积分奖励。</text>
+
+<view class="title"><view class='left-line'></view> 体力值规则<view class='right-line'></view></view>
+<text>一、体力消耗
+每次挑战排位赛减5点体力值。
+
+二、回复体力
+1）使用积分兑换，回满体力值。
+2）每5分钟回复1点体力，直到体力值到100为止。</text>
+
+<view class="title"><view class='left-line'></view> 段位规则<view class='right-line'></view></view>
+<text>1.每场排位赛都有对应的段位。每个段位的获胜+1星，失败-1星，当前段位的星星得满后，进入下一个段位。
+
+2.失败扣星星但是不会降段位。
+
+3.每个赛季结束之后，都会扣除相应的星星。</text>
+</view>
+
+
+<view class="c-scroll" wx:if="{{type==1}}">
+<view class="title"><view class='left-line'></view> 活动须知<view class='right-line'></view></view>
+<text>1.每天前十次完成游戏，都会获得一张门票的碎片卡。
+2.集齐每张门票的6张不同卡片，可以兑换一张对应展览的门票。
+3.每张门票，每个用户只能兑换一次。</text>
+
+<view class="title"><view class='left-line'></view> 分享须知<view class='right-line'></view></view>
+<text>分享到微信群，可以获得第二张随机的门票碎片。</text>
+</view>

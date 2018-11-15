@@ -1,0 +1,22 @@
+#counts-items{
+    padding: 5rpx;
+    height: 50rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+#look-count,
+#like-count,
+#comment-count{
+padding-right: 35rpx;
+display: flex;
+flex-direction: row;
+justify-content: flex-start;
+align-items: center;
+}
+#counts-items image{
+    width: 25rpx;
+    height: 25rpx;
+    padding: 5rpx;
+}

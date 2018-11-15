@@ -1,0 +1,120 @@
+.center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%,-50%,0);
+  overflow: hidden;
+  z-index: 999;
+}
+.box{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #0d2872;
+  overflow: hidden;
+}
+.box2{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 50%;
+  overflow: hidden;
+}
+.guodu{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 99999;
+}
+.icon{
+  position: absolute;
+  z-index: 9999;
+  width: 25vw;
+  height: 25vw;
+  top: calc(50% + 45vw);
+  left: 50%;
+  transform: translate3d(-50%,-50%,0);
+}
+.skip{
+  position: absolute;
+  z-index: 9999;
+  top: calc(50% - 70vw);
+  left: calc(50% + 35vw);
+  transform: translate3d(-50%,-50%,0);
+  width: 18.6vw;
+  height: 6vw;
+}
+.logo{
+  position: absolute;
+  z-index: 9999;
+  width: 16.6vw;
+  height: 20vw;
+  top: calc(50% - 60vw);
+  left: calc(50% - 35vw);
+  transform: translate3d(-50%,-50%,0);
+}
+.button{
+  width: 65vw;
+  height: 12vw;
+  margin: 2vw auto;
+  overflow: visible;
+}
+.view{
+  position: absolute;
+  bottom: 50%;
+  transform: translate3d(0,80%,0);
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.header{
+  width:100vw;
+  height: 60.46vw;
+}
+.answer{
+  position: absolute;
+  background: #0d2872;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.answer .title{
+  position: absolute;
+  font-size: 4vw;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: inline-block;
+  background: #fff;
+  padding: 10px 20px;
+  border-radius: 2px;
+  width: 70vw;
+  top: 43vw;
+}
+
+@keyframes anpaly{
+  from{
+    transform: translate3d(-50%,-50%,0) scale3d(1,1,1) ;
+    opacity: 1;
+  }
+  to{
+    transform: translate3d(-50%,-50%,0) scale3d(2,2,1) ;
+    opacity: 0;
+  }
+}
+@keyframes disappear{
+  from{
+    transform: scale3d(1,1,1) ;
+    opacity: 1;
+  }
+  to{
+    transform: scale3d(0,0,1) ;
+    opacity: 1;
+  }
+}

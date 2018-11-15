@@ -1,0 +1,113 @@
+/* pages/Activepage/openbox/index.wxss */
+page{
+ background: #e83731; 
+}
+.box{
+  position: absolute;
+  left: 0;
+  right: 0;
+  color: #fff;
+  text-align: center;
+  top: 18vw;
+
+}
+.fonttitle{
+  font-size: 6.5vw;
+  font-weight: bold;
+}
+.fontsub{
+  font-size: 4vw;
+}
+.baoxiang{
+  height: 80vw;
+  line-height: 80vw;
+  text-align: center;
+  overflow: visible;
+}
+.button{
+  display: inline-block;
+  height: 12vw;
+  line-height: 12vw;
+  width: 80vw;
+  background: #ffb400;
+  border-radius: 90px;
+  text-align: center;
+  color: #fff;
+  font-size: 5vw;
+  position: relative;
+  margin-top: 4vw;
+
+}
+.button::before{
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: -3px;
+  background: #f77d0e;
+  border-radius: 90px;
+  z-index: -1;
+}
+.center{
+  text-align: center;
+  overflow: visible;
+}
+.advertisement{
+  display: inline-block;
+  margin: 10vw auto;
+  width: 85vw;
+  height: 50vw;
+  background: #fff;
+  border-radius: 2px;
+  position: relative;
+}
+.xdt{
+  width: 60vw;
+  height: 3vw;
+}
+.advertisement .text{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 2vw;
+  color: #e83731;
+  font-size: 4vw;
+}
+.textcenter{
+  text-align: center;
+}
+.smtext{
+  display: inline-block;
+  color: #fff;
+  padding: 0 10vw 10vw 10vw;
+  font-size: 4vw;
+  text-align: left;
+}
+.advertisement .left{
+  position: absolute;
+  top: 14vw;
+  width: 30%;
+  bottom: 0;
+  text-align: right;
+}
+.advertisement .right{
+  position: absolute;
+  right: 0;
+  top: 14vw;
+  width: 65%;
+  bottom: 0;
+  text-align: left;
+  font-size: 4vw;
+}
+.advertisement .right .title{
+  font-size: 4.5vw;
+  color: #e70e27;
+}
+.advertisement .right .text{
+  color: #464646;
+}
+.left image{
+  width: 20vw;
+  height: 30vw;
+}

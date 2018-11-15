@@ -1,0 +1,60 @@
+<view style='display:{{EXdisplay?"block":"none"}};' class='exchange'>
+  <view class='exchangeWindow'>
+    <image class='ex-Close' bindtap='EXSHOW' data-buer="1" src='{{imgs.close}}' mode='widthFix'></image>
+    <text class='ex-title'>恢复体力</text>
+    <text class="ex-text">体力回满！继续战斗！</text>
+    <view class='ex-icontxt'>
+      <image class='ex-it-icon' src='{{imgs.lightning}}' mode='aspectFit'></image>
+      <text class='ex-it-text' >回满</text>
+    </view>
+    <view class='ex-integral'>
+      <image class='ex-i-icon' src='{{imgs.integral}}' mode='aspectFit' ></image>
+      <view class='ex-i-text'>{{hp}}</view>
+    </view>
+    <view bindtap='Porint' class='ex-button'>
+      兑换体力
+    </view>
+  </view>
+</view>
+
+<view class='header'>
+  <image src='{{imgs.header_bg}}' class='head-bg'></image>
+  <image src='{{headimgurl}}' class='headimg'></image>
+   <text class='nameText'>{{nameText}}</text>
+   <view class='physicalStrengthBox'>
+      <view class='physicalStrength'>
+        <image mode='aspectFit' style='width:16px;height:16px;vertical-align: middle;margin-right:6px;' src='{{imgs.lightning}}'></image>
+        <text>{{info.current_power}}/{{info.max_power}}</text>
+      </view>
+      <view wx:if='{{info.current_power < info.max_power}}' class='plus'>
+        <image bindtap='EXSHOW' data-buer="0" mode='widthFix' style='width:18px;height:18px;' src='{{imgs.jiahao}}'></image>
+      </view>
+      <view class='physicalStrength integral'>
+        <image class='integralIcon' mode='aspectFit' style='margin-top:-5px;width:18px;height:18px;vertical-align: middle;margin-right:6px;' src='{{imgs.integral}}'></image>
+        <text>{{info.points}}</text>
+      </view>
+   </view>
+
+   <!--
+   <image class='Ranking' mode='aspectFit' style='width:100px;height:40px;' src='{{Ranking}}' bindtap='ranking'></image>
+   -->
+    <view class='physicalStrengthBox rightTop' bindtap='onclick'>
+        <view>?</view>
+        <text>竞答规则</text>
+   </view>
+</view>
+<view class='content'>
+  <scroll-view class='listBox' scroll-into-view="{{scrollTop}}" scroll-y>
+    <view data-Uid='{{index}}' class='list' bindtap='matching' wx:for='{{GameData.data}}' id='{{GameData.Grade == index ? "noUnlocked":GameData.Grade-1 == index?"p_Unlocked":"Unlocked"}}'>
+        <image class='listImg' mode='aspectFit' style='width:48px;height:48px;' src='{{item.icon}}'></image>
+        <view class='listtext' wx:if='{{index != 15}}'>{{item.text}}</view>
+        <view class='listName'>{{item.name}}{{item.text}}</view>
+        <view wx:if="{{GameData.Grade == index}}" class='bzz'></view>
+        <image wx:if="{{GameData.Grade == index}}" class='lock' src='{{imgs.lockImg}}' mode='aspectFit' style='width:50px;height:50px;'></image>
+        <view class='StarBox'>
+        <image wx:for='{{item.level}}' style='animation:{{play && item.jb == GameData.Grade - 1 && item.dj == GameData.Starlevel?"k-play":""}} 2s;' class="Star" src='{{item.jb == 15?imgs.wzxx:item.jb < GameData.Grade - 1?imgs.bsxx:item.jb == GameData.Grade - 1 && item.dj <= GameData.Starlevel?imgs.hsxx:imgs.chsxx}}'></image>
+          <text wx:if="{{index == 15}}">{{index == 15?GameData.Starlevel:0}}</text>
+        </view>
+    </view>
+  </scroll-view>
+</view>

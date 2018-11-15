@@ -1,0 +1,32 @@
+<view class='header'>
+  <image src='https://www.zhanapp.com.cn/img/01/header_TAM.jpg' class='head-bg'></image>
+  <image src='{{info.headimgurl}}' class='headimg'></image>
+   <text class='nameText'>{{info.nickname}}</text>
+    <view class='physicalStrengthBox'>
+      <view class='physicalStrength'>
+        <text>积分：{{res.points}}</text>
+      </view>
+    </view>
+   <!--
+   <image class='Ranking' mode='aspectFit' style='width:100px;height:40px;' src='{{Ranking}}' bindtap='ranking'></image>
+   -->
+</view>
+<view class='content'>
+  <view class='Knob' bindtap='click' data-type='order'>我的订单 <text class='icon-jiantou iconfont text-right'></text></view>
+  <!--
+  <view class='line'></view>
+  <view class='icon-box'>
+    <view>
+      <view class='fontmin ui-icon'><text class='icon-dfk iconfont ui-icon'><text class='fontmin'>待付款</text></text></view>
+      <view class='fontmin ui-icon'><text class='icon-dff iconfont ui-icon'><text class='fontmin'>待发货</text></text></view>
+      <view class='fontmin ui-icon'><text class='icon-dsh iconfont ui-icon'><text class='fontmin'>待收货</text></text></view>
+    </view>
+  </view>
+  -->
+  <view class='line'></view>
+  <view class='Knob' bindtap='click' data-type='exchange'>门票兑换记录 <text class='icon-jiantou iconfont text-right'></text></view>
+  <view class='line'></view>
+  <button open-type="contact" class='Knob'>线上客服 <text class='icon-jiantou iconfont text-right'></text></button>
+  <view class='line'></view>
+  <button bindtap='click' data-type='phone'  class='Knob'>电话客服：15321050878<text class='icon-jiantou iconfont text-right'></text></button>
+</view>

@@ -1,0 +1,35 @@
+@import '../../../template/comment.wxss';
+@import '../../../template/counts.wxss';
+.header,
+.zhanxun-detail{
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    padding: 25rpx;
+}
+
+.zhanxun-detail{
+    font-size: 25rpx;
+}
+.header-group{
+   
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5rpx;
+}
+
+.header-group image{
+   
+   
+    width: 80rpx;
+    height: 80rpx;
+    border-width: 0;
+    border-radius: 40rpx;
+   
+}
+.header-group text{
+      padding: 10rpx;
+}

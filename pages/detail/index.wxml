@@ -1,0 +1,2 @@
+<image class="image-style" src="../../images/shopping.png" bindtap="ballClickEvent" style="bottom:{{ballBottom}}px;right:{{ballRight}}px;" bindtouchmove="ballMoveEvent"> 
+</image>

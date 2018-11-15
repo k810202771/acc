@@ -1,0 +1,4 @@
+<view class='headerbg'>聚齐卡片，可兑换以下任意一张卡片</view>
+<view class='scroll'>
+  <image wx:for="{{data}}" class='card' data-type='{{item.type}}' src='https://www.zhanapp.com.cn/php/5x4_img.php?url={{url}}{{item.img}}&width={{window.screenWidth * window.pixelRatio * 0.8}}&cq=3&bgcolor=3a4050'><text class='titel'>{{item.city}} · {{item.name}}\n({{item.type == 0?"需支付运费10元":item.type == 1?"本票为电子票":"本票在现场自取即可"}})</text><text data-id='{{item.id}}' data-img='{{item.img}}' data-name='{{item.name}}' data-type='{{item.type}}' bindtap='click' class='button' style="background:{{item.number > 0?'':'#cbcbcb'}}">{{item.number > 0?"兑换门票":"已兑完"}}</text></image>
+</view>

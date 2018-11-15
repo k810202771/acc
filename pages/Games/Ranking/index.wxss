@@ -1,0 +1,162 @@
+page{
+  position: relative;
+  width:100%;
+  height:100%;
+}
+.header{
+  width: 100%;
+  height: 64px;
+  background: #003e49;
+  position: absolute;
+  color: #fff;
+  top: 0;
+}
+.h-left{
+  position: absolute;
+  left: 0;
+  right: 50%;
+  bottom: 0;
+  top: 0;
+  text-align: center;
+  z-index: 99;
+}
+.h-line{
+  position: absolute;
+  right: 0;
+  left: 50%;
+  top: 10px;
+  bottom: 10px;
+  border-left: 1px solid #ffffff;
+  z-index: 99;
+}
+.h-right{
+  position: absolute;
+  left: 50%;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  text-align: center;
+  z-index: 99;
+}
+.header text{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%,-50%,0);
+  opacity: 0.5;
+}
+.content{
+  position: absolute;
+  top: 64px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  font-size: 14px;
+  color: #fff;
+}
+.listBox{
+  position: absolute;
+  width: auto;
+  right: 10px;
+  top: 10px;
+  left: 10px;
+  bottom: 84px;
+}
+.userBox{
+  position: absolute;
+  right: 10px;
+  top: calc(100% - 74px);
+  left: 10px;
+  bottom: 10px;
+}
+.list{
+  width: 100%;
+  height: 64px;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+.list+.list{
+  margin-top:10px; 
+}
+.list image{
+  position: absolute;
+  height: 44px;
+  width: 44px;
+  top: 10px;
+  left: 30px;
+  border-radius: 90px;
+}
+.c-top{
+  position: absolute;
+  height: 22px;
+  overflow:visible;
+  bottom: 50%;
+  right: 10px;
+  left: 84px;
+  border-bottom: 1px solid #fff;
+}
+.c-bottom{
+  position: absolute;
+  top: calc(50% + 5px);
+  bottom: 0;
+  right: 10px;
+  left: 84px;
+}
+.c-left{
+  float: left;
+  display: block;
+  width: 50%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+}
+.c-right{
+  position: relative;
+  float: right;
+}
+.c-bottom .c-left{
+  width: auto;
+  padding:0 15px;
+  border-radius: 90px;
+  background: rgba(0, 0, 0, 0.5)
+}
+.c-bottom .c-right{
+  padding-left:1.5em;
+  padding-right:0.5em;
+  border-radius: 90px;
+  background: rgba(0, 0, 0, 0.5)
+}
+.c-right image{
+  position: absolute;
+  top: 50%;
+  left: .5em;
+  transform: translateY(-50%);
+  height: 1em;
+  width: 1em;
+}
+.leftjb{
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.5);
+  transform:rotateZ(50deg) translate3d(-90%,-15%,0);
+}
+.leftjbtext{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3rem;
+  height: 24px;
+  transform:translateX(-10px);
+  color: #6f6f6f;
+  overflow: visible;
+}
+.leftjbtext text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+  transform:translate3d(-50%,-50%,0);
+}

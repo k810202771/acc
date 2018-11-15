@@ -1,0 +1,29 @@
+<!--pages/me/exchange/index.wxml-->
+<view class='header fixed'>
+  <text data-time='{{by.n}}{{by.y}}' bindtap='click' class='button' style='{{yindex != by.n + by.y?"color:#ccc;":"color:null;"}}'>{{by.n}}年{{by.y}}月</text>
+  <text data-time='{{sy.n}}{{sy.y}}' bindtap='click' class='button' style='{{yindex != sy.n + sy.y?"color:#ccc;":"color:null;"}}'>{{sy.n}}年{{sy.y}}月</text>
+  <text data-time='{{ssy.n}}{{ssy.y}}' bindtap='click' class='button' style='{{yindex != ssy.n + ssy.y?"color:#ccc;":"color:null;"}}'>{{ssy.n}}年{{ssy.y}}月</text>
+</view>
+<view class='header'></view>
+<view class='Knobp' wx:if="{{data.length <= 0}}">本月无兑换记录，请查看其它月份。</view>
+<view class='listbox' wx:for="{{data}}">
+  <view class='Knob'>流水号：{{item.account_id}}<text class='textright' style='{{item.state == 3?"color:#ff0000":""}}'>{{item.state == 0?"未付款":item.state == 1?"准备发货中":item.state == 3?(item.type == 0?"已发货":"已出票"):item.state == 2?"已关闭":"异常"}}</text></view>
+  <view class='line'></view>
+  <view class='ImgBox'>
+    <image class='card' src='https://www.zhanapp.com.cn/php/5x4_img.php?url={{url}}{{item.order_img}}&width={{window.screenWidth * window.pixelRatio * 0.8}}&cq=2&bgcolor=ffffff'></image>
+    <view class='bottom'>{{item.order_name}}</view>
+    <view class='line'></view>
+    <view class='Knob'>取票人信息</view>
+    <view class='kanbox'>
+      <view>姓名：{{item.name}}</view>
+      <view>电话：{{item.phone}}</view>
+      <view>联系地址：{{item.city}}</view>
+      <view style='{{item.state == 3?"color:#ff0000":""}}' wx:if="{{item.type != 0}}">现场报知亦行赠票，凭 【姓名+电话】 即可入场</view>
+      <view data-cnumber='{{item.cnumber}}' wx:if="{{item.state == 3 && item.type == 0 }}" bindtap='clickto' style='text-decoration: underline;'>点击展开快递信息</view>
+      <view wx:if="{{item.cnumber == wuliuid}}">
+        <text>{{wuliuname.fullname}}     {{wuliuid}}\n</text>
+        <text wx:for="{{wuliu}}">{{item.time}}\n{{item.desc}}\n</text>
+      </view>
+    </view>
+  </view>
+</view>

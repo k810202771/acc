@@ -1,0 +1,83 @@
+<!--pages/shop/order/index.wxml-->
+<view class='boxpad detailDesc'>
+  <view class='detatitle fontmin'><text class='icon-haofangtuo400iconfont2yinxing iconfont icontext'></text>  该商品由{{ptype}}提供</view>
+  <view class='imghead'>
+
+    <view class='titleleft'><image mode='aspectFill' src='{{img}}'></image></view>
+    <view class='titleright'>
+      <view class='imgtitle'>{{title}}</view>
+      <view class='imgtitle fontmin'>{{specificationp}}</view>
+      <!--<view class='imgtitle fontmin'>预计5月16日前发货</view>-->
+    </view>
+  </view>
+  <view class='detatitle'>
+    票档：{{specification}}
+    <text class='textright'>x{{activityNumber}}</text>
+  </view>
+</view>
+<view class='boxpad detailDesc'>
+
+  <view class='optype'>
+      <view bindtap='click' data-type='express' data-expresstype='{{item.type}}' class='typelist' style='{{item.type==expressXz?"background: #4b8feb;color: #fff;":""}}'  wx:for="{{express}}"><text class='icon-{{item.type == 1?"icon-yxj-express":item.type == 3?"xinfang":"erweima"}} iconfont icontext'></text><text class='text'>{{item.type == 1?"快递寄送":item.type == 3?"现场自取":"电子票"}}</text></view>
+      <!--<view class='typelist'><text class='icon-erweima iconfont icontext'></text><text class='text'>电子票</text></view>
+      <view class='typelist'><text class='icon-xinfang iconfont icontext'></text><text class='text'>上门取票</text></view>
+      <view class='typelist'><text class='icon-haofangtuo400iconfont2yinxing iconfont icontext'></text><text class='text'>现场自取</text></view>
+      -->
+  </view>
+
+
+  <view class='line'></view>
+  <!--wx:if="{{expressXX}}" bindtap='click' data-type='expressXX' 下面选择-->
+  <view >
+    <view class='detatitle'>取票人：<input value='{{expressXX.name}}' placeholder="请输入姓名" data-type='name' bindinput="bindReplaceInput"/></view>
+    <view class='line'></view>
+    <view class='detatitle'>手机号：<input value='{{expressXX.onb}}' placeholder="请输入手机号" data-type='onb' bindinput="bindReplaceInput"/></view>
+    <view wx:if="{{expressXz == 1}}" class='line'></view>
+    <view class='detatitle' wx:if="{{expressXz == 1}}">地址：<input value='{{expressXX.dz + expressXX.wz}}' placeholder="请输入地址" data-type='dz' bindinput="bindReplaceInput"/></view>
+    <view class='line'></view>
+  </view>
+    <view bindtap='click' data-type='expressXX' class='detatitle'>{{expressXX?"更换信息":expressXz == 1?"请选择邮寄地址":"请选择取票人信息"}} <text class="textright icon-jiantou iconfont icontext"></text></view>
+  <view wx:if="{{expressXz != 1}}" class='line'></view>
+  <view wx:if="{{expressXz != 1}}" class='title fontmin'>{{expressXz == 3?ptype + "工作人员将会在演出开始前1小时至现场开始派票；工作人员联系方式和取票地点将会在演出当天以短信通知发送到预留的手机号码，敬请留意。":expressXz == 5?"支付成功后，凭短信入场，或到演出地点兑换纸质票后入场":""}}</view>
+</view>
+<view class='boxpad detailDesc'>
+  <view class='detatitle'>商品金额<text class='textright'>￥ {{saleprice}}</text></view>
+</view>
+
+
+<view class='boxpad detailDesc' wx:if="{{expressXz == 1}}">
+  <view class='detatitle'>商品运费<text class='textright'>￥ 10</text></view>
+</view>
+
+
+<view class='boxpad detailDesc'>
+    <view class='detatitle'>优惠<switch class='textright' data-type='discount' checked="{{discountShow}}" bindchange="switchChange"/></view>
+    <view wx:if="{{discountShow}}">
+      <view class='title fontmin' style='color:{{discountcolor}};' wx:if="{{discounttext}}">{{discounttext}}</view>
+      <view class='line' wx:if="{{discounttext}}"></view>
+      <view class='detatitle'>优惠码：<input placeholder="请输入优惠码" maxlength='6' data-type='discount' bindinput="bindReplaceInput"/></view>
+    </view>
+</view>
+
+
+<view class='boxpad detailDesc'>
+  <view class='detatitle'>积分<switch class='textright' data-type='visibility' checked bindchange="switchChange"/></view>
+  <view class='title fontmin' wx:if="{{visibility}}">您共有{{points}}积分
+    <text class='textright fontmax'>-{{showpoints}} 积分</text>
+    <text>\n使用后剩余 {{points - showpoints}}</text>
+  </view>
+</view>
+
+<view style='height:30vw;'>
+
+</view>
+
+<view class="shopbox detailDesc boxpad">
+  <view class='detatitle fontmin'>
+    <icon type="info" size="{{windowWidth}}" style='height:{{windowWidth}}px;margin-top:-{{windowWidth*1.6}}px;' color="#828282"/>
+    <text> 不支持无条件退款</text>
+    <text class='textright fontmax' style='display:inline-block;'>合计 <text style='color:#ff2661;'>￥{{visibility?showprice + (expressXz==1?10:0):saleprice * activityNumber + (expressXz==1?10:0)}}<text wx:if="{{visibility}}"> {{visibility?" + "+showpoints+"积分":""}}</text></text></text>
+    <!--<text class='textright' style='margin-right:4vw;'>已优惠 ￥0</text>-->
+  </view>
+  <view class='qrbutton' data-type='placeorder' bindtap='click'>确认下单</view>
+</view>

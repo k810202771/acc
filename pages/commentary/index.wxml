@@ -1,0 +1,35 @@
+<!--pages/commentary/index.wxml-->
+<image style='width:100%;' mode='widthFix' src='{{content.img}}'></image>
+<view class='title'>{{content.title}}</view>
+<view class='content'>
+  <text>{{content.text}}</text>
+</view>
+
+<view style='margin:18vw 0 2vw 0;background: {{index!=list.length-1?"#dadada":"#fff"}};' class='xline'></view>
+<view class='logo_box'>
+  <image style='width:25vw;height:25vw;' src='https://static.zhanapp.com.cn/logo/trip_2.jpg'></image>
+</view>
+
+<view class='placeholder'></view>
+<view class='audio'>
+  <view class='ProgressBarBg'>
+    <view class='ProgressBar' style='width:{{Percentage}}%;'></view>
+  </view>
+
+  <view class='button' bindtap='clickl' wx:if="{{scene > 0}}">
+    <view class='play' style='left:calc(50% + 1px - 2px);transform: translate3d(-50%,-50%,0) rotateZ(180deg);'></view>
+    <view class='play' style='left:calc(50% + 1px + 2px);transform: translate3d(-50%,-50%,0) rotateZ(180deg);'></view>
+  </view>
+
+  <view class='button' bindtap='click'>
+    <view class='{{play?"suspend":"play"}}'></view>
+  </view>
+
+  <view class='button' bindtap='clickr' wx:if="{{list.length - 1 > scene}}">
+    <view class='play' style='left:calc(50% + 1px - 2px);'></view>
+    <view class='play' style='left:calc(50% + 1px + 2px);'></view>
+  </view>
+
+  <view class='time'>{{audiodate}} / {{audioend}}</view>
+</view>
+<!--<video class='audio' src="{{content.mp3}}" id="audio" controls="{{true}}" poster="{{content.img}}" name="{{content.title}}" author="知亦行"></video>-->

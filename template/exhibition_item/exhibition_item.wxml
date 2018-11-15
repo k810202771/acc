@@ -1,0 +1,18 @@
+<import src="../rating_bar/rating.wxml"/>
+<template name="item-exhibition">
+<view  bindtap="exhibition_item_click" data-id="{{item.objectId}}" class="exhibition-item">
+<image mode="aspectFill" style="width:300rpx;height:200rpx;padding:10rpx" src="{{item.cover.url}}"></image>
+
+<view class="exhibition-item-text">
+<text id="item-title">{{item.nameBase}}</text>
+<template is="rating"  data="{{star_state}}" />
+<view class="item-details">
+<text  wx:if="{{item.feeDesc=='-'}}" class="news-item-t">免费</text>
+<text  wx:else class="news-item-title">{{item.feeDesc}}</text>
+<text class="news-item-t" >{{item.openDesc}}</text>
+<text  >{{item.gallery.nameBase}}</text>
+</view>
+
+</view>
+</view>
+</template>

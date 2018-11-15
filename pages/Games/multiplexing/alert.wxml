@@ -1,0 +1,23 @@
+<template name="alert">
+  <view class='alert_bg' wx:if="{{alertdata.display}}">
+    <view class='alert_box'>
+      <view class='alert_title'>
+        {{alertdata.title}}
+      </view>
+      <view class='alert_content'>
+        {{alertdata.content}}
+      </view>
+      <view class='alert_button'>
+
+          <button class='alert_button_z' bindtap='click' data-type='close'>
+            取消
+          </button>
+
+          <button class='alert_button_z' data-type='{{alertdata.type}}' open-type='{{alertdata.opentype}}'>
+            确定
+          </button>
+
+      </view>
+    </view>
+  </view>
+</template>

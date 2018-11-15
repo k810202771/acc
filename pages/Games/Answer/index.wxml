@@ -1,0 +1,65 @@
+<canvas class='timeCanvas' canvas-id="firstCanvas">
+  <cover-view class='textCanvas'>{{second}}s</cover-view>
+</canvas>
+<!--连续答对框-->
+<view class='Uservpn UserVpnLeft'>
+  <view wx:if="{{User.u1.pn > 1}}" class='Uservpn_o1'><text class='{{User.u1.pnLeft}}'>连续答对{{User.u1.pn}}题</text></view>
+  <view wx:if="{{User.u1.vn > 1}}" class='Uservpn_o2'><text>{{User.u1.vn}}连胜</text></view>
+</view>
+
+<view class='Uservpn UserVpnRight'>
+  <view wx:if="{{User.u2.pn > 1}}" class='Uservpn_o1'><text class='{{User.u2.pnLeft}}'>连续答对{{User.u2.pn}}题</text></view>
+  <view wx:if="{{User.u2.vn > 1}}" class='Uservpn_o2'><text>{{User.u2.vn}}连胜</text></view>
+</view>
+<!--头像框-->
+<view class='UserIcon Userleft'>
+  <image src='{{User.u1.img}}'></image>
+  <text>{{User.u1.name}}</text>
+</view>
+<view class='UserIcon Userright'>
+  <image src='{{User.u2.img}}'></image>
+  <text>{{User.u2.name}}</text>
+</view>
+
+
+<!--题目块-->
+<view class="question">
+  <view class='content timu' wx:if="{{progress == 1}}">
+    <image wx:if="{{question.img}}" mode='aspectFit' src='{{question.img}}'></image>
+    <text>{{question.text}}</text>
+  </view>
+  <view class='content' wx:if="{{progress == 0}}">
+    <view class='problemIndex' style='opacity: {{problem.opacity}};transform:translateX(-50%) scale3d({{problem.scale}},{{problem.scale}},1);'><text>第{{problem.index}}题</text></view>
+    <image wx:if="{{problem.index == 5}}" style='width:90px;' mode='aspectFit' src='https://www.zhanapp.com.cn/img/03/ScoreX2.png'></image>
+  </view>
+</view>
+<!--选择块-->
+<view class="Choice">
+  <view class='Cleft'>
+    <text>{{User.u1.score}}</text>
+    <view class='ProgressBarBox'>
+      <view class='ProgressBar' style='height:{{100/1200 * User.u1.score}}%'></view>
+    </view>
+  </view>
+
+  <view class='CChoice'>
+    <view class='ChoiceBOX' wx:for="{{choice}}">
+      <view bindtap='click' data-right="{{item}}" data-select="{{index+1}}" style='transition: {{transition}};background:{{User.u1.select == index+1 || User.u2.select == index+1 || over && item == question.right ?(item == question.right?"#bbe17e;color:#fff;":"#ee8488;color:#fff;"):"#fff;"}}transform: scale3d({{bili}},{{bili}},1);' class='ChoiceButton {{Animation}} {{ChoiceAnimation}}{{index}} {{User.u1.select == index+1 || User.u2.select == index+1 || over && item == question.right?"ChoiceButtonAnimation2":""}}'>
+
+        <image wx:if='{{User.u1.click && User.u1.select == index+1}}' class='ulc' src="{{item == question.right?imgs.imgtrue:imgs.imgfalse}}"></image>
+        <image wx:if='{{User.u2.click && User.u2.select == index+1}}' class='urt' src="{{item == question.right?imgs.imgtrue:imgs.imgfalse}}"></image>
+
+        <view class='text'>
+          {{item}}
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='Cright'>
+    <text>{{User.u2.score}}</text>
+    <view class='ProgressBarBox'>
+      <view class='ProgressBar' style='height:{{100/1200 * User.u2.score}}%'></view>
+    </view>
+  </view>
+</view>

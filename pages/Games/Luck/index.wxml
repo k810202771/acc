@@ -1,0 +1,40 @@
+<view class='WinningBg' style='display:{{jiangpin.show}};'>
+  <view class='WinningWindow'>
+    <view class='w-t'></view>
+    <view class='w-s'>
+        <image class='w-img-gxn' mode="widthFix" src='{{imgs.Winning}}'></image>
+        <view class='w-text-zj'>
+          <text class='w-z-text'>抽中{{jiangpin.name}}{{jiangpin.suffix}}</text>
+          <text class='w-z-bg'>抽中{{jiangpin.name}}{{jiangpin.suffix}}</text>
+        </view>
+        <view class='w-text-sm'>1.请正确填写以下信息，方便我们快递奖品。</view>
+        <view class='w-text-sm'>2.中奖记录请在个人中心查看。</view>
+        <view bindtap='onWxWindow' class='w-text-pl'><view class='w-text-{{w_t_right==">"?"pl":"py"}}-left'>{{w_t_left}}</view><view class='w-text-{{w_t_right==">"?"pl":"py"}}-right'>{{w_t_right}}</view></view>
+        <button bindtap='updata' class="button" style='margin: 10px auto;'><view class='bg'></view><view class='text'>提交</view></button>
+    </view>
+  </view>
+</view>
+
+<view class='scroll'>
+  <image mode="widthFix" src="https://www.zhanapp.com.cn/img/0323/title.png" class="title"></image>
+  <image mode="widthFix" src="https://www.zhanapp.com.cn/img/0323/platform.png" class="platform">
+    <view class="text">我的积分：{{info.points}}</view>
+    <view class='box'>
+      <view bindtap='{{index == 4?"openBorder":null}}' class='{{item.type}}' wx:for="{{prize}}">
+        <view class='border' style='  left: 0px;  right: 0px;  top: 0px;  bottom: 0px;border: {{item.width}}px solid #ff5700;'></view>
+        <image mode='widthFix' src='{{item.img}}'></image>
+        <text>{{item.name}}</text>
+      </view>
+    </view>
+  </image>
+  <button bindtap='butlist' class="button"><view class='bg'></view><view class='text'>我的抽奖记录</view></button>
+  <view class='footerTitle'>抽奖规则</view>
+  <view class='content'>
+  <text>1.每次抽奖消费10积分。
+  2.抽奖后请正确填写地址信息等，因为用户自己填写错误，无法收到奖品，用户自己承担后果。
+  3.每位用户，每天最多可以抽奖的次数为20次。
+  4.活动最终解释权归知亦行博物馆小程序。
+  5.本次抽奖活动与腾讯公司无关。</text>
+  </view>
+  <view style='height:40px;width:100%'></view>
+</view>

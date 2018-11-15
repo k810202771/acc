@@ -1,0 +1,10 @@
+<view class='list' wx:for='{{datalist}}'>
+  <image style="width:8vh;height:8vh;margin:1vh;" src='{{item.bounds.img}}'></image>
+  <text class='name'>{{item.bounds.name}}{{item.bounds.suffix}}</text>
+  <text class='time'>{{item.createdAt}}</text>
+  <view class='city' style='display:{{item.bounds.type=="robj"?"block":"none"}};'>
+    <view>{{item.deliveryInfo.consignee}} {{item.deliveryInfo.phone}}</view>
+    <view>{{item.deliveryInfo.address}}</view>
+    <view>{{item.deliveryInfo.logistics}}</view>
+  </view>
+</view>

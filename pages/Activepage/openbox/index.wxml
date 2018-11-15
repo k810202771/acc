@@ -1,0 +1,30 @@
+<!--pages/Activepage/openbox/index.wxml-->
+<image style='width:0;height:0;' src='https://static.zhanapp.com.cn/downloadFile/openbx.png'></image>
+<image style='width:100vw;height:45.5vw' src='https://static.zhanapp.com.cn/downloadFile/bg.png'></image>
+<view class='box'><text class='fonttitle'>每日开宝箱，积分赚不停</text><text class='fontsub'>\n积分在购买门票时，可直接抵扣现金</text></view>
+<view class='baoxiang'>
+  <image style='width:30vw;height:30vw;margin-top: 15vw;' src='{{img}}'></image>
+</view>
+<view class='center'><text class='button' bindtap='click' data-type='box' style='margin-top:-5vw;'>打开今日宝箱</text></view>
+<view class='center' bindtap='click' data-type='en'>
+  <view class='advertisement'>
+    <text class='text textcenter'>奖品支持</text>
+    <image class='xdt' src='https://static.zhanapp.com.cn/downloadFile/xdt.png'></image>
+    <view class='left'>
+      <image src='https://static.zhanapp.com.cn/downloadFile/ggzzshb.png'></image>
+    </view>
+    <view class='right'>
+      <text class='text'>本次活动由
+      <text class='title'>【北京】MUSE展览提供</text>
+      2018.8.5 - 2018.11.5
+      北京市798艺术区艺术展览区</text>
+    </view>
+  </view>
+</view>
+<view class='center'>
+  <text class='smtext'>活动规则：
+  1.宝箱每天0点重置。每天只能打开一个宝箱。每个宝箱有效期为24小时。
+  2.每个宝箱有10份奖励。好友抢到积分的时候，也会返还给打开宝箱者。
+  3.每次赠送数量随机，最高可以获得1000积分奖励。
+  4.积分可以直接抵扣一部分门票现金。</text>
+</view>

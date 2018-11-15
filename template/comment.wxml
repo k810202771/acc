@@ -1,0 +1,29 @@
+<import src="../../rating_bar/rating.wxml" />
+<template name="comment">
+  <view class="comment-t">
+    <image id="comment-head" style="width:80rpx;height:80rpx; border-radius: 40rpx;border:0 solid;" src="{{item.user.headimgurl}}"></image>
+    <view class="comment-detail">
+      <text id="comment-name">{{item.user.nickname}}</text>
+      <text id="comment-content">{{item.content}}</text>
+      <!--<template is="rating" data="{{star_state}}" />-->
+      <view class="comment-bottom">
+        <text style="color:#959595">{{item.createdAt}}</text>
+        <!--<view>-->
+
+          <!--<image style="width:20rpx;height:20rpx;" src="{{item.isgood==0?'../../../images/opinion_ilike.png':'../../../images/opinion_ilike_on.png'}}"></image>
+          <text id="good-number">{{item.good}}</text>-->
+        
+        <!--</view>-->
+      </view>
+    </view>
+      <view class="comment-delete" wx:if="{{item.isUser}}">
+      <image mode="aspectFit" bindtap="del_comment"  style="width:35rpx;height:30rpx;padding:10rpx" src="/images/trash.png" data-id="{{item.objectId}}"></image>
+            <!--<text bindtap="del_comment" data-id="{{item.objectId}}">删除</text>-->
+          </view>
+  </view>
+</template>
+<template name="comments">
+  <block wx:for="{{comments}}" wx:key="objectId">
+    <template is="comment" data="{{item}}" />
+  </block>
+</template>

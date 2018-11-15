@@ -1,0 +1,72 @@
+<!--pages/Activepage/openbox/index.wxml-->
+<image style='width:100vw;height:45.5vw' src='https://static.zhanapp.com.cn/downloadFile/bg.png'></image>
+
+<view class='center'>
+  <view class='advertisement header'>
+    <view class='head'>
+      <image class='headimg' src='{{user.head}}'></image>
+      <view class='fontstr'>{{user.name}}</view>
+    </view>
+    <view class='h-title'>想约你一起看展，并扔给你一个宝箱</view>
+    <view class='h-box'>
+        <view class='left' style='width:24%' >
+          <image style='width:16vw;height:16vw;'src='https://static.zhanapp.com.cn/downloadFile/openbx.png'></image>
+        </view>
+        <view class='right' style='width:70%'>
+          <text class='fontmax'>最高可得1000积分!</text>
+          <text class='fontmin'>\n一起抢积分，可以直接抵扣展览门票费用</text>
+          <text class='fontright'>\n剩余时间 : <text class='fonttime'>{{timer.H}}</text> : <text class='fonttime'>{{timer.m}}</text> : <text class='fonttime'>{{timer.s}}</text></text>
+        </view>
+    </view>
+  </view>
+</view>
+
+<view class='surplus'>
+  还剩下 <text class='fdfont'>{{10 - userdata.length}}个</text> 宝箱，已瓜分 <text class='fdfont'>{{zjf}}积分</text>
+</view>
+<black wx:if="{{Mors}}">
+  <view class='center'><button open-type="share" class='button' bindtap='click'>分享给好友 <text class='buttonyy'></text> </button></view>
+  <view class='center'><text class='button' bindtap='click' data-type='pyq'>分享到朋友圈<text class='buttonyy'></text></text></view>
+</black>
+<view wx:if="{{!Mors}}" class='center'><text class='button' bindtap='click' data-type='box'>我也要开宝箱</text></view>
+
+<view class='center'>
+  <view class='advertisement' style='margin-bottom:0;height:auto;padding:0 4vw 4vw 4vw;'>
+    <text class='text textcenter'>给力展友</text>
+    <image class='xdt' src='https://static.zhanapp.com.cn/downloadFile/xdt.png'></image>
+    <view wx:for="{{userdata}}" class='udbox'>
+        <view class='udli' style='{{userdata.length-1 == index?"border:0":""}}'>
+            <image class='udimg' src='{{item.wximg}}'></image>
+            <text class='udszj udtext'> {{item.wxname}}</text>
+            <text class='udtext'>抢到了 <text class='redtext'>{{item.integral}}积分</text></text>
+            <black  wx:if="{{item.additional > 0}}">
+              <text class='udtext'>，并送给</text> <text class='udszj udtext'>{{userdata[0].wxname}}</text>
+              <text class='udtext'><text class='redtext'>{{item.additional}}积分</text></text>
+            </black>
+        </view>
+    </view>
+  </view>
+</view>
+
+<view class='center' bindtap='click' data-type='en'>
+  <view class='advertisement' style='padding:0 4vw 0 4vw;'>
+    <text class='text textcenter'>奖品支持</text>
+    <image class='xdt' src='https://static.zhanapp.com.cn/downloadFile/xdt.png'></image>
+    <view class='left' style='text-align: center;'>
+      <image src='https://static.zhanapp.com.cn/downloadFile/ggzzshb.png'></image>
+    </view>
+    <view class='right'>
+      <text class='text'>本次活动由
+      <text class='title'>【北京】MUSE展览提供</text>
+      2018.8.5 - 2018.11.5
+      北京市798艺术区艺术展览区</text>
+    </view>
+  </view>
+</view>
+<view class='center'>
+  <text class='smtext'>活动规则：
+  1.宝箱每天0点重置。每天只能打开一个宝箱。每个宝箱有效期为24小时。
+  2.每个宝箱有10份奖励。好友抢到积分的时候，也会返还给打开宝箱者。
+  3.每次赠送数量随机，最高可以获得1000积分奖励。
+  4.积分可以直接抵扣一部分门票现金。</text>
+</view>

@@ -1,0 +1,27 @@
+<import src="../../../wxParse/wxParse.wxml"/>
+<import src="../../../template/comment.wxml"/>
+<import src="../../../template/counts.wxml"/>
+<import src="../../../template/gallery_tags.wxml"/>
+<view class="header">
+<view class="header-group">
+<image  src="{{resultsData.group.cover.url}}"></image>
+<text>{{resultsData.group.nameBase}}</text>
+</view>
+<text>{{resultsData.nameBase}}</text>
+<text>{{resultsData.subNameBase}}</text>
+
+<template is="counts" data="{{counts}}">
+</template>
+
+</view>
+
+<view class="wxParse">
+    <template is="wxParse" data="{{wxParseData}}"/>
+</view>
+<!--todo: 点赞 时间x -->
+<view class="comment">
+<block wx:for="{{comment}}" wx:key="objectId">
+<template is="comment" data="{{item}}"/>
+</block>
+
+</view>

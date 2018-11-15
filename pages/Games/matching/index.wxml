@@ -1,0 +1,20 @@
+<image bindload='imgload' binderror='imgerror' src='{{base64IMG}}' style='display:none;'></image>
+<view class='Uibox'>
+  <image class='looking' style='animation:{{animationData}};display:{{lookingTF}};' mode="aspectFit" src='{{imgs.LookingFor}}'></image>
+  <view class='left' style='transform: skewY(150deg) translate3d({{animatleft}}%,-50%,0);' ></view>
+  <view class='right' style='transform: skewY(150deg) translate3d({{animatright}}%,-50%,0);'></view>
+  <view class='content'>
+
+    <view class='leftUser' style='transform:translate3d({{leftUserP}}%,0,0);'>
+      <image mode="aspectFit" class='UserIcon' src='{{UserImg}}'></image>
+      <text class='UserText'>{{UserText}}</text>
+    </view>
+    <view class='rightUser' style='transform:translate3d({{rightUserP}}%,0,0);'>
+      <image mode="aspectFit" class='UserIcon UserIconRight' src='{{User2Img}}'></image>
+      <text class='UserText UserTextRight'>{{UserText2}}</text>
+    </view>
+
+    <image mode="aspectFit" src="{{imgs.VSicon}}" style='opacity: {{VSopacity}};transform: scale3d({{vsScale}},{{vsScale}},1);' class='VSicon'></image>
+
+  </view>
+</view>

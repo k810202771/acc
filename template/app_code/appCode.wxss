@@ -1,0 +1,16 @@
+.app-code{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
+
+.app-code image{
+    height: 50rpx;
+    width: 50rpx;
+}
+
+.app-code text{
+    font-size: 20rpx;
+    color: #959595;
+}

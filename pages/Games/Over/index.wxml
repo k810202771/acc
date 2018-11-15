@@ -1,0 +1,74 @@
+<import src="/pages/multiplexing/cardwindow.wxml" />
+<template is="cardwindow" data="{{card:card}}" ></template>
+
+<view class='windowOpen' style='display:{{bgdisplay}};background: rgba(0, 0, 0, {{bgopacity}});'>
+<image class='btitle' style='opacity:{{fopacity}}' src='{{imgs.btitle}}'></image>
+<image class='windowkapian1' style='display:{{kp1.display}};transform:translate3d({{kp1.left}}vw,{{kp1.top}}vh,0) scale3d({{kp1.s}},{{kp1.s}},1);' src='{{kp1.img}}'></image>
+  <image class='windowkapian2' style='display:{{kp2.display}};transform:translate3d({{kp2.left}}vw,{{kp2.top}}vh,0) scale3d({{kp2.s}},{{kp2.s}},1) ;' src='{{kp2.img}}'></image>
+  <image class='windowbgg' style='opacity:{{fopacity}}' src='{{imgs.bgg}}'></image>
+  <button open-type="share" style='opacity:{{fopacity}}' class='tcckbutton' data-type='kp'><text>分享到群，再获得一张</text></button>
+  <view style='opacity:{{fopacity}}' class='tgbutton'><text bindtap='ontiaog'>跳过</text></view>
+</view>
+<!--连续答对框-->
+<view class='Uservpn UserVpnLeft' style='top:{{UserVpnTop}}px'>
+  <view wx:if="{{User.u1.pn > 1}}" class='Uservpn_o1'><text class='pnLeft_o1'>连续答对{{User.u1.pn}}题</text></view>
+  <view wx:if="{{User.u1.vn > 1}}" class='Uservpn_o2'><text>{{User.u1.vn}}连胜</text></view>
+</view>
+
+<view class='Uservpn UserVpnRight' style='top:{{UserVpnTop}}px'>
+  <view wx:if="{{User.u2.pn > 1}}" class='Uservpn_o1'><text class='pnLeft_o2'>连续答对{{User.u2.pn}}题</text></view>
+  <view wx:if="{{User.u2.vn > 1}}" class='Uservpn_o2'><text>{{User.u2.vn}}连胜</text></view>
+</view>
+<view class='scoreBox' style='top:{{scoreTop}}px'>
+  <view class='SL' style='width:{{100/(User.u1.score+User.u2.score) * User.u1.score}}%'>{{User.u1.score}}分</view>
+  <view class='SR' style='width:{{100/(User.u1.score+User.u2.score) * User.u2.score}}%'>{{User.u2.score}}分</view>
+</view>
+<!--头像框-->
+<view class='UserIcon Userleft'>
+  <image mode='widthFix' src='{{User.u1.img}}'></image>
+  <text>{{User.u1.name}}</text>
+</view>
+<view class='UserIcon Userright'>
+  <image mode='widthFix' src='{{User.u2.img}}'></image>
+  <text>{{User.u2.name}}</text>
+</view>
+<view class='TFIcon' style='height:{{TFIconHeight}}px;'>
+  <image mode='aspectFit' src="{{imgs.TFIcon}}"></image>
+</view>
+<!--奖励内容-->
+<view class='reward' style='top: {{rewardTop}}px;'>
+  <view class='integral'>
+    <view class='lineBox lineTop'></view>
+    <view class='iContent'>
+    <image mode='aspectFit' src="{{imgs.integral}}"></image>
+    <text>+</text><text>{{boundsPoints}}</text>
+    </view>
+    <view class='lineBox lineBottom'></view>
+  </view>
+  <!--表情-->
+  <view class='expression'>
+      <view data-index='{{index}}' wx:for="{{ExpressionIcon}}" class='eImgBox' bindtap='onExpression'>
+        <image mode='aspectFit' class='eImg' src='{{item}}'></image>
+      </view>
+  </view>
+
+  <view class='Buttons'>
+    <button class='ButtonW' bindtap='Bank'><text>继续挑战</text></button>
+    <button open-type="share" class='ButtonY' bindtap='Share'><text>分享战绩</text></button>
+  </view>
+  <!--
+  <view class='Buttontext'>
+    每天前3次分享，可以获得⚡20体力。
+  </view>
+  -->
+</view>
+  <view class='expressionShow'>
+    <view class='ESL' wx:if='{{item.display}}' wx:for="{{User.u1.expression}}"  style='opacity:{{item.opacity}};transform:translate3d({{item.left}}px,{{item.top}}px,0)'>
+        <image class='plobj' mode='widthFix' style='width:30px;' src='{{item.src}}'></image>
+        <image mode='widthFix' style='width:70px;' src='{{imgs.ExpressionBg}}'></image>
+    </view>
+    <view class='ESR' wx:if='{{item.display}}' wx:for="{{User.u2.expression}}"  style='opacity:{{item.opacity}};display: {{item.display}};transform:rotateY(180deg) translate3d({{item.left}}px,{{item.top}}px,0)'>
+        <image class='plobj' mode='widthFix' style='width:30px;' src='{{item.src}}'></image>
+        <image mode='widthFix' style='width:70px;' src='{{imgs.ExpressionBg}}'></image>
+    </view>
+  </view>

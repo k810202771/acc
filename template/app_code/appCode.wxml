@@ -1,0 +1,6 @@
+<template name="app_code" >
+<!--<view  class="app-code" bindtap="code_tap">
+<image src="/images/app_code.png"></image>
+<text>小程序码</text>
+</view>-->
+</template>

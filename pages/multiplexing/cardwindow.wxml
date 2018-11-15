@@ -1,0 +1,10 @@
+<template name="cardwindow">
+  <view class='cardwindow' wx:if="{{card.display}}">
+    <view class='card_w_title'>恭喜获得一张卡片</view>
+    <image class='card_w_img' style="width:{{card.width * 0.5}}px;height:{{card.width * 0.5 * 1.37}}px;" src='https://www.zhanapp.com.cn/php/5x4_img.php?url=https://www.zhanapp.com.cn/php/kapian/images/{{card.id}}.png&cq=1&width={{card.width * card.pixelRatio * 0.5}}'></image>
+    <view class='card_w_button_box'>
+      <text bindtap='click' data-type='card_jump' class='card_w_button'>去集卡</text>
+      <text bindtap='click' data-type='card_close' class='card_w_button'>确定</text>
+    </view>
+  </view>
+</template>

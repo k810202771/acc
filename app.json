@@ -1,0 +1,86 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/canvas/index",
+    "pages/commentary/index",
+    "pages/listpush/index",
+    "pages/index/index",
+    "pages/shop/choice/index",
+    "pages/Games/video/index",
+    "pages/Games/video/over/index",
+    "pages/main_page/zhanxun/index",
+    "pages/Games/fragment/exchange/index",
+    "pages/Games/fragment/obtain/index",
+    "pages/Games/fragment/give/index",
+    "pages/Games/fragment/rule/index",
+    "pages/detailed/index",
+    "pages/me/index",
+    "pages/me/exchange/index",
+    "pages/me/personal/index",
+    "pages/shop/purchase/index",
+    "pages/shop/order/index",
+    "pages/logs/logs",
+    "pages/detail/index",
+    "pages/main_page/exhibition/index",
+    "pages/main_page/book_content/index",
+    "pages/main_page/exhibition_item/index",
+    "pages/main_page/exhibition_items/index",
+    "pages/main_page/exhibition_item_detail/index",
+    "pages/setting/index",
+    "pages/pavilion_list/index",
+    "pages/calender/index",
+    "pages/citylist/index",
+    "pages/city/index",
+    "pages/comment/index",
+    "pages/comment_list/index",
+    "pages/friend_circle/index",
+    "pages/post_article/index",
+    "pages/Games/index",
+    "pages/Games/matching/index",
+    "pages/Games/Answer/index",
+    "pages/Games/Over/index",
+    "pages/Games/Ranking/index",
+    "pages/Games/Dan/index",
+    "pages/Games/Luck/index",
+    "pages/Games/Luck/LuckList/index",
+    "pages/Games/rule/index",
+    "pages/Games/fragment/index",
+    "pages/getimg/index",
+    "pages/Activepage/openbox/index",
+    "pages/Activepage/help/index"
+  ],
+  "window": {
+    "backgroundColor": "#f5f5f5",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "知亦行",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#9B9DB1",
+    "selectedColor": "#3b96f5",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_on.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/Games/index",
+        "iconPath": "images/game.png",
+        "selectedIconPath": "images/game_on.png",
+        "text": "竞答"
+      },
+      {
+        "pagePath": "pages/me/index",
+        "iconPath": "images/me.png",
+        "selectedIconPath": "images/me_on.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

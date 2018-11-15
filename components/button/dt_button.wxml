@@ -1,0 +1,5 @@
+<view class='button' bindtap='click' style='animation: {{animation}}'>
+<text class='text'>
+  {{value}}
+</text>
+</view>

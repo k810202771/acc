@@ -1,0 +1,143 @@
+/* pages/shop/order/index.wxss */
+page{
+  background: #f5f5f5;
+  color: #474747;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  font-size: 3vw;
+}
+input{
+  display:inline-block;
+  height:10vw;
+  text-overflow:clip;
+  overflow:visible;
+  width:60vw;
+  line-height:10vw;
+}
+.boxpad{
+  padding: 0 5vw;
+}
+.detailDesc{
+  position: relative;
+  margin-top: 1vw;
+  background: #fff;
+}
+.detatitle{
+  position: relative;
+  font-size: 4vw;
+  height: 10vw;
+  line-height: 10vw;
+  color: #000;
+  overflow: visible;
+}
+.titleleft{
+  width:20vw;
+  height: 27vw;
+  font-size: 0;
+  float: left;
+}
+.imghead{
+  padding: 2vw 0;
+}
+.titleleft image{
+  width: 100%;
+  height: 100%;
+}
+.titleright{
+
+}
+.imgtitle{
+  font-size: 4vw;
+  padding-left: 2vw;
+}
+.title{
+  font-size: 4vw;
+  margin-top: 1vw;
+  background: #fff;
+  padding-bottom: 2.5vw;
+  padding-top: 2.5vw;
+}
+.fontmin{
+  font-size: 3vw;
+  color: #828282;
+}
+.fontmax{
+  color: #474747;
+  font-size: 4vw;
+}
+.textright{
+  float: right;
+}
+.typelist .icontext{
+  display: inline-block;
+  font-size: 6vw;
+  position: absolute;
+  top: 0;
+  left: 3vw;
+  bottom: 0;
+}
+.typelist .text{
+  font-size: 3.4vw;
+  margin-left: 8vw;
+}
+.typelist{
+  font-size: 0; 
+  position: relative;
+  display: inline-block;
+  background: #f5f5f5;
+  color: #474747;
+  padding: 2vw 3vw;
+  border-radius: 3px;
+  margin-right: 1vw;
+  margin-top: 1vw;
+}
+.line{
+  height: 1px;
+  transform: scaleY(0.5);
+  background: #eee;
+}
+.optype{
+  padding: 5vw 0;
+}
+
+.wx-switch-input{
+  width: 11.8vw !important;
+  height: 4vw !important;
+  background: #ffcc35 !important;
+  border: 1px solid #ffcc35 !important;
+}
+/*白色样式（false的样式）*/
+.wx-switch-input::before{
+  width: 11.5vw !important;
+  height: 3.5vw !important;
+}
+/*绿色样式（true的样式）*/
+.wx-switch-input::after{
+  width: 6vw !important;
+  height: 3.5vw !important;
+}
+
+/*swtich样式end*/
+.shopbox{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-top: 1px solid #eee;
+  z-index: 999;
+}
+.qrbutton{
+  width: 89vw;
+  padding: 2vw;
+  margin-bottom: 2vw;
+  box-sizing: border-box;
+  background: #ff2661;
+  color: #fff;
+  text-align: center;
+  font-size: 5vw;
+  border-radius: 5px;
+}

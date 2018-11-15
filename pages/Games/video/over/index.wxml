@@ -1,0 +1,36 @@
+<!--pages/Games/video/over/index.wxml-->
+<view catchtouchmove='{{overflow}}'>
+<image class='header' src='https://static.zhanapp.com.cn/video/head1.jpg'></image>
+<image class='bg' src='https://static.zhanapp.com.cn/video/bgimg.png'></image>
+<view class='title'><view class='name'>{{name}}</view><text class='left'>{{title}}</text></view>
+<canvas class='svg' canvas-id="dataCanvas">
+  <view class='svg_bog' wx:for="{{imgPosition}}" style='left:{{item.x}}px;top:{{item.y}}px;'>
+  <image class='svg_img' src='https://static.zhanapp.com.cn/video/es/a{{index}}.png' ></image>
+  <text class='svg_text'>\n{{index == 0?'':'"'}}{{item.name}}{{index == 0?'':'"'}}\n细菌</text>
+  </view>
+</canvas>
+<view class='button'>
+  <button bindtap='click'>分享到朋友圈</button>
+  <button open-type='share'>分享给好友</button>
+</view>
+<view class='retest'>
+  <button bindtap='retest'><text class='iconfont icon-retest'></text>重新测试</button>
+</view>
+<view class='muse' bindtap='museto'>
+  <view class='m_left'>
+    <image class='m_img' src='https://static.zhanapp.com.cn/MUSE_Poster520x740-06.png'></image>
+  </view>
+  <view class='m_right'>
+    <text class='m_title'>MUSE | 你，我的缪斯</text>
+    <view class='m_view'>
+      <text class='m_text'>从梵高到马蒂斯\n2018.8.13-2018.11.13\n北京站 · 798艺术中心</text>
+    </view>
+  </view>
+</view>
+
+<canvas class='save' canvas-id="save" wx:if="{{saveShow}}">
+  <view class='fudong' bindtap='hidesvg'>
+  </view>
+</canvas>
+<button class='savebutton' wx:if="{{saveShow}}" bindtap='onsave' 	open-type="{{b1===true?'openSetting':''}}">保存到相册</button>
+</view>

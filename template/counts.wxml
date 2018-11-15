@@ -1,0 +1,19 @@
+<template name="counts">
+<view id="counts-items">
+ 
+<!--<view id="look-count">
+<image  src="../../../images/see.png"></image>
+<text>{{counts.views}}</text>
+</view>-->
+<!--<view id="like-count">
+<image src="../../../images/like_.png"></image>
+<text>{{counts.favor}}</text>
+</view>-->
+
+<!--<view  id="comment-count">
+<image src="../../../images/say.png"></image>
+<text>{{counts.comment}}</text>
+</view>-->
+
+</view>
+</template>

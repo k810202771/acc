@@ -1,0 +1,43 @@
+page{
+  background: #f5f5f5;
+  color: #474747;
+}
+.list{
+  background: #fff;
+  margin-top: 2vw;
+  padding: 0 1.5vw;
+  font-size: 3.5vw;
+}
+.listobj view{
+  margin: 1vw 0;
+}
+.listobj image{
+  width: 97vw;
+  height: 48.5vw;
+}
+.listobj .tdp{
+  height: 1.5em;
+  line-height: 1.5em;
+  position: relative;
+  overflow: visible;
+  margin-bottom: 2vw;
+}
+.listobj .purchase{
+  position: absolute;
+  right: 1vw;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #ff2661;
+  color: #fff;
+  border-radius: 5px;
+  padding: 0 2.5vw;
+  font-size: 3.2vw;
+}
+.fontmin{
+  font-size: 2.5vw;
+}
+.xline{
+  height: 1px;
+  transform: scaleY(0.5);
+}

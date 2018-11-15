@@ -1,0 +1,91 @@
+@import '../../template/exhibition_item/exhibition_item.wxss';
+
+.calendar__wrp{
+    background-color: #efefef;
+}
+
+.calendar__navbar {
+  height: 83rpx;
+  align-items: center;
+  display: flex;
+  text-align: center;
+  background: white;
+  color: #000;
+}
+
+.calendar__navbar .calendar__arrow {
+  width: 220rpx;
+  font-weight: bold;
+}
+
+.calendar__navbar .calendar__date {
+  flex: 1;
+  font-size: 30rpx;
+}
+
+.calendar__head {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  align-items: center;
+  text-align: center;
+  height: 80rpx;
+  background: #f2f2f2;
+  font-size: 28rpx;
+}
+
+.calendar__head view {
+  display: block;
+  flex: 1;
+}
+
+.calendar__body {
+  background: #f2f2f2;
+}
+
+.calendar__rows {
+  height: 90rpx;
+  display: flex;
+  overflow: hidden;
+  padding: 0 4rpx 8rpx;
+  align-items: center;
+}
+
+.calendar__cols {
+  flex: 1;
+  align-items: center;
+  height: 100%;
+  padding: 0 4rpx;
+  display: flex;
+}
+
+.calendar__item {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f2f2f2;
+  width: 70%;
+  height: 70%;
+}
+
+.calendar__item2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: slategrey;
+  width: 65%;
+  height: 65%;
+  border-color: slategrey;
+  border-style: hidden;
+  border-width: 0rpx;
+  border-radius: 50%;
+  color: white;
+}
+
+.city-tag{
+  margin-right: 30rpx;
+display: flex;
+flex-direction: row;
+align-items: center;
+}

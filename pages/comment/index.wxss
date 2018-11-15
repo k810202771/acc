@@ -1,0 +1,37 @@
+/* pages/comment/index.wxss */
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.title{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+.title text{
+    margin: 10rpx;
+    font-size: 30rpx;
+}
+.text{
+    width: 70%;
+    height: 300rpx;
+    border-width: 1rpx;
+    border-color: gray;
+    border-radius: 5rpx;
+    border-style: solid;
+    margin: 10rpx;
+}
+
+.swiper-item{
+    width: 750rpx;
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,141 @@
+@import '../multiplexing/alert.wxss';
+
+page{
+  width: 100%;
+  height: 100%;
+  background: #3a4050;
+  position: relative;
+  font-size: 4vw;
+}
+.bg1{
+  position: absolute;
+  width: 100vw;
+  top: 30vw;
+}
+.bg2{
+  position: absolute;
+  width: 70vw;
+  top: 8vw;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 2;
+}
+.imgbox{
+  font-size: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 30vw;
+  margin: auto;
+  overflow: visible;
+  text-align: center;
+  z-index: 2;
+  transition: transform .5s; 
+}
+.imgMax{
+
+  width: 45vw;
+  
+}
+.imgMin{
+  width: 14vw;
+  height: 16.9vw;
+  margin: 1.9vw 1.9vw 0 1.9vw;
+}
+
+.imgMinbox{
+  position: absolute;
+  overflow: visible;
+  width: 72vw;
+  bottom: 18vw;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 3;
+}
+.btbox{
+  position: absolute;
+  display: inline-block;
+  color: #fff;
+  width: 96vw;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 3vw;
+  text-align: center;
+}
+.btbox .button{
+  display: inline-block;
+  padding: 1vw 4vw;
+  background: #ccb89f;
+  text-align: center;
+  margin: 2vw;
+  border-radius: 90px;
+}
+.btbox button{
+  color: #fff;
+  line-height: 1rem;
+  font-size: 4vw;
+}
+.hotbox{
+  position: relative;
+  font-size: 2.5vw;
+  color: #fff;
+  overflow: visible;
+  text-align: center;
+}
+.indexgb{
+  position: absolute;
+  left: 2vw;
+  right: 2vw;
+  margin: auto;
+  bottom: -2vw;
+  height: 1vw;
+  background: #fff;
+  border-radius: 90px;
+}
+.indexhot{
+  position: absolute;
+  right: 0;
+  top: 0;
+  min-width: 2.5vw;
+  overflow: visible;
+  background: #ccb89f;
+  border-radius: 90px;
+  border: 1px solid #fff;
+  transform: translate3d(50%,-50%,0);
+  padding: .25vw 1vw;
+  z-index: 999;
+}
+.filter{
+  -webkit-filter: grayscale(1); /* Webkit */  
+  filter: gray; /* IE6-9 */    
+  filter: grayscale(1); /* W3C */  
+}
+.rule{
+  position: absolute;
+  right: 2vw;
+  top: 1vw;
+  font-size: 3.5vw;
+  z-index: 99;
+  color: #fff;
+}
+.rule::before{
+  display: inline-block;
+  text-align: center;
+  content: "?";
+  background: rgba(255, 255, 255, 0.5);
+  width: .8rem;
+  height: .8rem;
+  line-height: .8rem;
+  border-radius: 90px;
+  margin-right: 1vw;
+}
+
+@keyframes openxz
+{
+0%   {transform:scaleX(1);}
+50% {transform:scaleX(0);}
+100% {transform:scaleX(1);}
+}

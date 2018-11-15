@@ -1,0 +1,29 @@
+@import '../../../template/app_code/appCode.wxss';
+/* pages/exhibition_item_detail/index.wxss */
+.exhibition-detail{
+    display: flex;
+    flex-direction: column;
+    padding: 30rpx;
+}
+.code-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.exhibition-detail-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.exhibition-detail image{
+    width: 100%;
+    height: auto;
+}
+
+.code-container image{
+    width: 50rpx;
+    height: 50rpx;
+}
